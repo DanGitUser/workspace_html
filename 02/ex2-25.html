@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .letter2 {letter-spacing: 5px;}
+        .letter3 {word-spacing: 2em;}
+        /* 
+        ~일때, ~할때
+        :link = when it's a link
+        :visited = when visited
+        :active = when clicked on
+        :hover = when mouse is placed upon
+        :focus = when it's focused on
+         */
+         p a:link {text-decoration: none; color: black;}
+         p a:visited {color: orange;}
+         p a:hover, p a:focus{text-decoration: underline; color: rebeccapurple;}
+         p a:active {text-decoration: none; color: red;}
+         .txt:hover, .txt:focus {color: red;}
+    </style>
+</head>
+<body>
+    <p>1990 Notebook Hello!</p>
+    <p class="letter2">1990 Hello!<br>Goodbye. You've done well</p>
+    <p class="letter3">1990 Hello!<br>Goodbye. You've done well</p>
+    <p><a href="https://www.naver.com">NAVER</a></p>
+    <p class="txt" tabindex="0">Normal Text Area</p>
+</body>
+</html>
