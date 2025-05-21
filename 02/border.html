@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box1 {
+            width: 0px;
+            height: 0px;
+            border: 100px solid #fff;
+            border-top-width: 100px;
+            border-bottom-width: 50px;
+            margin: auto 1px;
+            }
+            
+            div {
+                text-align: left;
+        }
+        
+        .box2 {
+            width: 0px;
+            height: 0px;
+            border: 20px solid;
+            border-top-width: 60px;
+            border-bottom-width: 5px;
+            border-bottom-color: rgba(0, 0, 0, 0);
+            border-left-color: rgba(0, 0, 0, 0);
+            border-right-color: rgba(0, 0, 0, 0);
+            border-top-color: #fff;
+            margin: auto 140px;
+            } */
+        body {
+            background-color: orange;
+        }
+
+        .main {
+            background: black;
+            max-width: 300px;
+            padding: 50px;
+            margin: 0 auto;
+            color: white;
+            position: relative;
+            margin-bottom: 50px;
+            border-radius: 20px;
+        }
+
+        .main::after {
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: -45px;
+            left: 130px;
+            transform: skewx(-30deg);
+            border: 15px solid transparent;
+            width: 0;
+            border-top: 30px solid black;
+            margin: 0 auto;
+        }
+
+        .main.me::after {
+            left: 250px;
+            transform: skewx(30deg);
+           margin: right;
+           float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box1">HELLO WORLD</div>
+    <div class="box2"></div> -->
+
+    <!-- <br> -->
+
+    <div class="main">Hello</div>
+    <div class="main me">HI</div>
+    <div class="main">Wanna rob a bank?</div>
+    <div class="main me">uhh</div>
+    <div class="main">Hello</div>
+    <div class="main me">HI</div>
+    <div class="main">Hello</div>
+    <div class="main me">HI</div>
+    <div class="main">Hello</div>
+    <div class="main me">HI</div>
+</body>
+
+</html>

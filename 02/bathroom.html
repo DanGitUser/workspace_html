@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bath {
+            display: inline-block;
+            height: 100px;
+        }
+        .mhead {
+            width: 100px;
+            background-color: blue;
+            border-radius: 100px 100px;
+        }
+        .fhead {
+            width: 100px;
+            background-color: red;
+            border-radius: 100px 100px;
+        }
+        .mbody {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 100px solid blue;
+        }
+        .fbody {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid red;
+        }
+
+        .base {display: inline-block; height: 100px;}
+        .men {background-color: blue;}
+        .women {background-color: red;}
+        .head {
+            width: 100px; 
+            border-radius: 100px 100px;
+        }
+        .body {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+        }
+        /* .men .body {border-top: 120px solid blue; border-bottom-width: 50px;}
+        .women .body {border-bottom: 120px solid red; border-top-width: 50px;} */
+    </style>
+</head>
+<body>
+    <div class="base men">
+        <div class="head"></div>
+        <div class="body"></div>
+    </div>
+    <br>
+    <div class="base women">
+        <div class="head"></div>
+        <div class="body"></div>
+    </div>
+    <br>
+    <span class="bath mhead"></span>
+    <span class="bath fhead"></span>
+    <br>
+    <span class="bath mbody"></span>
+    <span class="bath fbody"></span>
+</body>
+</html>
