@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sample {
+            to {transform: rotateZ(360deg);}
+            0% {background: firebrick; transform: translate(0,0);}
+            50% {background: cornflowerblue; transform: translate(30px,20px);}
+            100% {background: forestgreen; transform: translate(0,0);}
+        }
+
+        div div{
+            display: inline-block;
+            width: 100px; height: 100px;
+            padding: 10px;
+            animation: sample 4s linear forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes hero {
+            to {transform: rotateZ(360deg);}
+        }
+        /* img {
+            display: inline-block;
+            animation: hero 1s linear infinite;
+        } */
+
+        p {
+            background-image: url(img/heroes_logo.png);
+            animation: 4s linear forwards;
+            animation-iteration-count: infinite;
+        }
+        p {
+            width: 100px; height: 100px;
+            padding: 10px;
+            animation: sample 4s linear forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.namu.wiki/i/qOwMMICHFXum1kb2r4eTb8tLlzLf7zGy8zkAZ5cwHqe5VKFxFNLSrKkh6mgtnyO6kHL5wNCfyTxJ5YVSy_ChGJpSmhLf132IMh0zPGYpzgf3iJR6MgxOzMoqMXMaBOFDQjVP5Ss6FJ0rWq_zVm7KSQ.webp">
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+    <!-- <p></p>
+    <p></p>
+    <p></p>
+    <p></p> -->
+</body>
+</html>
