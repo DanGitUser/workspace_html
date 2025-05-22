@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        /* header */
+        header {
+            font: 20px "Arial Black";
+            padding: 0.1px;
+            background: whitesmoke;
+            text-align: center;
+            color: #135;
+            text-shadow:
+                2px 2px #246,
+                3px 3px #357,
+                4px 4px #468,
+                5px 5px #579,
+                6px 6px #68a,
+                7px 7px #79b,
+                7px 7px #8ac;
+        }
+
+        /* navigation */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background: #ddd;
+            border: 1px solid #8ac;
+            position: relative;
+            width: 100%;
+        }
+
+        nav li {
+            display: inline;
+        }
+
+        nav li a {
+            display: inline-block;
+            padding: 1em;
+            width: 150px;
+            text-align: center;
+        }
+
+        nav li a:hover {
+            background-color: #135;
+            color: #eee;
+        }
+
+        /* main */
+        /* main */
+        main {
+            padding: 1em;
+            height: 2000px;
+            /* 121 112 */
+        }
+
+        main>* {
+            padding: 16px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        /* you can use ( > * ) to apply properties to multiple elements*/
+        main .content {
+            height: 500px;
+            width: 768px;
+            background-color: white;
+            margin-right: 16px;
+        }
+
+        main aside {
+            height: 300px;
+            width: 384px;
+            background-color: white;
+        }
+
+        /* footer */
+        footer {
+            font-size: 16px;
+            padding: 1em;
+            background: whitesmoke;
+            color: midnightblue;
+            text-align: center;
+            clear: left;
+        }
+
+        /* misc */
+        .arrow-area i {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            font-size: 3em;
+            border-radius: 50%;
+            color: #888;
+            transition: all .3s;
+            display: none;
+        }
+
+        .arrow-area i:hover {
+            box-shadow: 0 0 7px #ccc;
+            color: #222;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header id="header">
+            <h1>
+                <!-- <img src="img/booklogo.png" alt="booklogo" class="booklogo"> -->
+                <!-- <br> -->
+                BOOKFLIX
+            </h1>
+        </header>
+
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="best_sellers.html">Best Sellers</a></li>
+                    <li><a href="new_releases.html">New Releases</a></li>
+                    <li><a href="top_picks.html">Top Picks</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <div class="content">
+
+            </div>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>copyright &copy</p>
+        <address>avalon 12th ave</address>
+    </footer>
+
+    <div class="arrow-area">
+        <i class="fa-regular fa-circle-up"></i>
+    </div>
+
+    <script>
+        $(window).scroll(function (e) {
+            console.log(window.scrollY)
+            if (window.scrollY > 500) {
+                $(".arrow-area i").fadeIn(200);
+            } else {
+                $(".arrow-area i").fadeOut(200);
+            }
+        })
+    </script>
+
+</body>
+
+</html>

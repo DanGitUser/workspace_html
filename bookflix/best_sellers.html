@@ -22,27 +22,27 @@
 
         /* header */
         header {
-            padding: 1em;
+            font: 20px "Arial Black";
+            padding: 0.1px;
             background: whitesmoke;
             text-align: center;
-            color: #ffffff;
+            color: #135;
             text-shadow:
-                -2px -2px 0 #009,
-                2px -2px 0 #009,
-                -2px 2px 0 #009,
-                2px 2px 0 #009,
-                -3px 0px 0 #009,
-                3px 0px 0 #009,
-                0px -3px 0 #009,
-                0px 3px 0 #009,
-                4px 3px 0 #357;
+                2px 2px #246,
+                3px 3px #357,
+                4px 4px #468,
+                5px 5px #579,
+                6px 6px #68a,
+                7px 7px #79b,
+                7px 7px #8ac;
         }
 
         /* navigation */
         nav ul {
             margin: 0;
             padding: 0;
-            background: #eee;
+            background: #ddd;
+            border: 1px solid #8ac;
         }
 
         nav li {
@@ -57,7 +57,7 @@
         }
 
         nav li a:hover {
-            background-color: midnightblue;
+            background-color: #135;
             color: #eee;
         }
 
@@ -89,18 +89,6 @@
             background-color: white;
         }
 
-        section {
-            text-align: center;
-        }
-        table {
-            margin: 15px auto;
-            width: 100%;
-            max-width: 1200px;
-        }
-        table, td, th {
-            border: 1px solid black;
-        }
-
         /* footer */
         footer {
             font-size: 16px;
@@ -116,43 +104,23 @@
 <body>
     <div>
         <header id="header">
-            <h1>AVALON MALL MANAGEMENT ver1.0</h1>
+            <h1>
+                <!-- <img src="img/booklogo.png" alt="booklogo" class="booklogo"> -->
+                <!-- <br> -->
+                BOOKFLIX
+            </h1>
         </header>
 
         <div>
             <nav>
                 <ul>
-                    <li><a href="register_member.html">회원등록</a></li>
-                    <li><a href="manage_member.html">회원목록조회/수정</a></li>
-                    <li><a href="sales_member.html">회원매출조회</a></li>
-                    <li><a href="main.html">홈으로</a></li>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="best_sellers.html">Best Sellers</a></li>
+                    <li><a href="new_releases.html">New Releases</a></li>
+                    <li><a href="top_picks.html">Top Picks</a></li>
                 </ul>
             </nav>
         </div>
-
-        <section>
-            <h2></h2>
-            <table>
-                <tr>
-                    <th>회원번호</th>
-                    <th>회원서명</th>
-                    <th>전화번호</th>
-                    <th>주소</th>
-                    <th>가입일자</th>
-                    <th>고객등급</th>
-                    <th>거주지역</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </table>
-        </section>
 
         <main>
             <div class="content">
