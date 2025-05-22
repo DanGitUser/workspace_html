@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* function */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        /* header */
+        header {
+            padding: 1em;
+            background: whitesmoke;
+            text-align: center;
+            color: #ffffff;
+            text-shadow:
+                -2px -2px 0 #009,
+                2px -2px 0 #009,
+                -2px 2px 0 #009,
+                2px 2px 0 #009,
+                -3px 0px 0 #009,
+                3px 0px 0 #009,
+                0px -3px 0 #009,
+                0px 3px 0 #009,
+                4px 3px 0 #357;
+        }
+
+        /* navigation */
+        nav ul {
+            margin: 0;
+            padding: 0;
+            background: #eee;
+        }
+
+        nav li {
+            display: inline;
+        }
+
+        nav li a {
+            display: inline-block;
+            padding: 1em;
+            width: 150px;
+            text-align: center;
+        }
+
+        nav li a:hover {
+            background-color: midnightblue;
+            color: #eee;
+        }
+
+        /* main */
+        /* main */
+        main {
+            padding: 1em;
+            height: 2000px;
+            /* 121 112 */
+        }
+
+        main>* {
+            padding: 16px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        /* you can use ( > * ) to apply properties to multiple elements*/
+        main .content {
+            height: 500px;
+            width: 768px;
+            background-color: white;
+            margin-right: 16px;
+        }
+
+        main aside {
+            height: 300px;
+            width: 384px;
+            background-color: white;
+        }
+
+        /* footer */
+        footer {
+            font-size: 16px;
+            padding: 1em;
+            background: whitesmoke;
+            color: midnightblue;
+            text-align: center;
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header id="header">
+            <h1>AVALON MALL MANAGEMENT ver1.0</h1>
+        </header>
+
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="register_member.html">회원등록</a></li>
+                    <li><a href="manage_member.html">회원목록조회/수정</a></li>
+                    <li><a href="sales_member.html">회원매출조회</a></li>
+                    <li><a href="main.html">홈으로</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <div class="content">
+
+            </div>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>copyright &copy</p>
+        <address>avalon 12th ave</address>
+    </footer>
+
+</body>
+
+</html>

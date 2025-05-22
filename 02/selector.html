@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p[title="kor"] {color: red;} */
+        [title='nation kor'] {color: red;}
+        [title$='kor'] {text-decoration: underline;}
+        [title~= 'kor'] {font-size: 2em;}
+        /* [title|= 'ko'] {color: blue;} */
+        [class~= 'my'] {color: blue;}
+        [class|= 'my'] {color: purple;}
+        [title] {background-color: orange;}
+        /* [] 속성 선택자 */ 
+
+        li:first-child {
+            color: brown;
+        }
+
+        li:first-of-type {
+            font-weight: bold;
+        }
+
+        li:last-child {
+            background-color: yellow;
+        }
+
+        li:last-of-type {
+            font-style: italic;
+        }
+
+        li:nth-child(3) {
+            color: orange;
+        }
+        li:nth-child(3n) { /* Nn: applies effect to element n per number of N*/
+            text-decoration: underline;
+        }
+        li:nth-last-child(2) {
+            color: purple;
+        }
+        li:nth-child(2n+1) {
+            background-color: gray;
+        }
+
+        li::before {
+            content: 'I like ';
+            display: block;
+        }
+        li::after {
+            content: ' alot.';
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <p title="nation kor ko-kr" class="my-class">한국</p>
+    <p title="nation jpn jp-jn">일본</p>
+    <p title="nation chn ch-cn">중국</p>
+
+    <div class="wrapper clearfix">
+        <div class="content"></div>
+        <div class="aside"></div>
+    </div>
+
+    <h3>과일들</h3>
+    <ul>
+        <li>딸기</li>
+        <li>사과</li>
+        <li>배</li>
+        <li>수박</li>
+        <li>복숭화</li>
+        <li>오렌지</li>
+        <li>모과</li>
+        <li>무화과</li>
+        <li>망고</li>
+        <li>용과</li>
+        <li>키위</li>
+    </ul>
+    <h3>Vetgetables</h3>
+    <ul>
+        <p>Leaf</p>
+        <li>Cucumber</li>
+        <li>Letuce</li>
+        <li>Cabbage</li>
+        <li>Carrot</li>
+        <li>Tomato</li>
+        <li>Onion</li>
+    </ul>
+</body>
+</html>
