@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .common {
+            display: inline-block;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 5px solid;
+            background: url('https://thumb.ac-illust.com/f6/f6145551c198e7b4791dd5ccaa38243a_t.jpeg');
+            text-indent: -9999px;
+            background-position: -30px -117px;
+        }
+
+        .r {
+            background-position: -30px -117px;
+        }
+
+        .s {
+            background-position: -187px -117px;
+        }
+
+        .p {
+            background-position: -344px -117px;
+        }
+
+        .result-icon {
+            display: inline-block;
+            width: 110px;
+            height: 110px;
+            border: 5px solid;
+            border-radius: 50%;
+            font-size: 70px;
+        }
+
+        /* .result-icon i {
+            float: left;
+        } */
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <a href="" class="common r">ROCK</a>
+            <a href="" class="common p">PAPER</a>
+            <a href="" class="common s">SCISSORS</a>
+        </div>
+        <hr>
+        <div>
+            <div class="result-icon"><i class="fa-sharp fa-solid fa-question"></i></div>
+            <div class="result-icon"><i class="fa-sharp fa-solid fa-question"></i></div>
+        </div>
+        <hr>
+        <div>
+            <h2></h2>
+            <h3> WIN <span></span> LOSE <span></span> </h3>
+        </div>
+    </div>
+    <script>
+        var v = 0;
+        var l = 0;
+        $("a").click(function () {
+            event.preventDefault();
+            var myChoice = $(this).index();
+            var comChoice = parseInt(Math.random() * 3);
+
+            switch (myChoice - comChoice) {
+                case -2:
+                case 1:
+                    $("h2").text('WIN')                    
+                    v++;
+                    break;
+                case 0:
+                    $("h2").text('DRAW')
+                    break;
+                case -1:
+                case 2:
+                    l++;
+                    $("h2").text('LOSE')
+            }
+            // alert(myChoice + ", " + comChoice);
+            // Icon Display
+            // "rsp"[]
+            $(".result-icon:eq(0)").removeClass("r s p").addClass("common").addClass("rps"[myChoice]);
+            $(".result-icon:eq(1)").removeClass("r s p").addClass("common").addClass("rps"[comChoice]);
+
+            $("span:eq(0)").text(v);
+            $("span:eq(1)").text(l);
+            console.log(myChoice, comChoice);
+            
+        });
+    </script>
+</body>
+
+</html>

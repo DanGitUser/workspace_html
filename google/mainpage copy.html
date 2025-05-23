@@ -82,25 +82,58 @@
             box-sizing: border-box;
         }
 
-        .searchbarframe {
-            display: flex;
-            z-index: 3;
-            position: relative;
-            min-height: 44px;
-            background: #fff;
-            border: 1px solid #dfe1e5;
-            box-shadow: 0px 2px 8px 0px rgba(60, 64, 67, 0.25);
-            border-radius: 24px;
+        .bar {
             margin: 0 auto;
-            width: 638px;
-            width: auto;
-            max-width: 584px;
+            width: 575px;
+            border-radius: 30px;
+            border: 1px solid #dcdcdc;
         }
 
-        .sarchbarfield {
-            display: flex;
-            flex-wrap: wrap;
-            flex: 1;
+        .bar:hover {
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+        }
+
+        .bar:focus-within {
+            box-shadow: 1px 1px 8px 1px #dcdcdc;
+            outline: none;
+        }
+
+        .searchbar {
+            height: 45px;
+            border: none;
+            width: 500px;
+            font-size: 16px;
+            outline: none;
+
+        }
+
+        .voice {
+            height: 20px;
+            position: relative;
+            top: 5px;
+            left: 10px;
+        }
+
+        .button {
+            background-color: #f5f5f5;
+            border: none;
+            color: #707070;
+            font-size: 15px;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .button:hover {
+            border: 1px solid #c8c8c8;
+            padding: 9px 19px;
+            color: #808080;
+        }
+
+        .button:focus {
+            border: 1px solid #4885ed;
+            padding: 9px 19px;
         }
 
         main .padding-bottom {
@@ -169,11 +202,11 @@
 
     <header>
         <ul>
-            <li><a href="#">Gmail</a></li>
-            <li><a href="#">Images</a></li>
-            <li><a href="#">Search Labs</a></li>
-            <li><a href="#">Google Apps</a></li>
-            <li><a href="#">Google Account</a></li>
+            <li><a href="https://mail.google.com/mail/&ogbl">Gmail</a></li>
+            <li><a href="https://www.google.co.kr/imghp?hl=ko&ogbl">Images</a></li>
+            <li><a href="https://www.google.co.kr/intl/ko/about/products">Grid</a></li>
+            <li><a href="https://store.google.com/KR?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=ko-KR">Google Search</a></li>
+            <li><a href="https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.co.kr/&ec=futura_exp_og_so_72776762_e">Google Account</a></li>
         </ul>
     </header>
 
@@ -200,12 +233,15 @@
         </div>
 
         <form>
-            <div class="padding-mid">
-                <div class="searchbarframe">
-                    <div class="searchbarfield">
-                        <input class="searchbar" type="text" title="Search">
-                    </div>
-                </div>
+            <div class="bar">
+                <input class="searchbar" type="text" title="Search">
+                <a href="#"> <img class="voice"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png"
+                        title="Search by Voice"></a>
+            </div>
+            <div class="buttons">
+                <button class="button" type="button"><a href=""></a>Google Search</button>
+                <button class="button" type="button"><a href=""></a>I'm Feeling Lucky</button>
             </div>
         </form>
 

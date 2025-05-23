@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num1 = 20;
+        var num2 = 11;
+
+        var score1 = num1 + num2;
+        var score2 = num1 - num2;
+        var score3 = num1 * num2;
+        var score4 = num1 / num2;
+
+        console.log(score1, score2, score3, score4);
+
+        var evenOdd = 2;
+        var result = evenOdd % 2;
+        var comment;
+        comment = result === 0 ? evenOdd + 'even' : evenOdd + 'odd';
+        console.log(comment);
+        
+
+        var increase = 0;
+        var add = 0;
+        ++increase; // 1
+        console.log(increase);
+        increase++;
+        console.log(increase); // 2
+        add = ++increase;      
+        console.log(add, increase);
+        add = increase++;      
+        console.log(add, increase);
+
+        // ** : square oprator
+        console.log(Math.pow(3, 3));
+        console.log(3 ** 3);
+        
+        var day = "Monday";
+        switch (day) {
+            case "Monday":
+                console.log('Start of weekdays');
+                break;
+            case "Friday":
+                console.log('End of weekdays');
+                break;
+            default:
+                console.log('Just another day');
+                
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

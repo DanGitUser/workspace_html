@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul, li {border: 1px solid orange;}
+        ul {border-collapse: collapse; margin: 0 auto;}
+        li {padding: 16px;} */
+    </style>
+    <script>
+        var arr = ['purple'];
+        document.write("<ul>");
+        for(var i = 2; i <= 2 ; i++) {
+            for(var j = i ; j <= 9 ; j++) {
+                var rand = parseInt(Math.random() * arr.length);
+                document.write(`<li style='color:${arr[rand]}'>${i} x ${j} = ${i*j}</li>`);
+            }
+        }
+        document.write("</ul>");
+
+        // sum of all the numbers within the inputed number
+        // alert
+        // document.write(num);
+        // document.write(Number(num * (num+1) / 2));
+        // document.write(`${i+j}`);
+        // var input = Number(prompt('Input a number'));
+        var input = Number(prompt('input a number'));
+        var num = 0 
+        for(var i = 1 ; i <= input ; i++) {
+            num += 1;   
+            
+        } 
+        var result = num * (num+1) / 2; 
+        document.write(result);
+        alert(result);
+
+        // document.write(`Input : ${input} <br>`);
+        // for(var i = 1; i <= input; i++) {
+        //     if(i % 2 != 0) {
+        //         num += i;
+        //         document.write(`+ ${i} = ${result}<br>`);  
+        //     }
+        // }
+        // alert(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
