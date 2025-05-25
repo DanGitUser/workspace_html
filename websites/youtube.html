@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000000;
+        }
+
+        header {
+            position: fixed;
+            top: 0%;
+            width: 100%;
+            height: 56px;
+            background-color: #282828;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .dock_expander {
+            width: 40px;
+            height: 40px;
+            margin-left: 12px;
+            margin-right: 12px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: #282828;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .dock_expander:hover {
+            background-color: rgba(255, 255, 255, 0.16);
+        }
+
+        .logo_area {
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+        }
+
+        .logo_area a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        .yt_logo {
+            height: 20px;
+            width: auto;
+            margin-right: 8px;
+            padding: 18px 0 18px 0;
+            /* padding: 18px 14px 18px 16px; */
+            /* display:block; */
+        }
+
+        .center {
+            display: flex;
+            flex: 1 1 auto;
+            justify-content: center;
+            align-items: center;
+            min-width: 200px;
+        }
+
+        .searchbar {
+            /* padding: 0 4px 0 16px; */
+            max-width: 600px;
+            min-width: 200px;
+            height: 38px;
+            background-color: hsl(0, 0%, 7%);
+            border: 1px solid hsl(0, 0%, 18.82%);
+            border-radius: 40px 0 0 40px;
+            flex: 1 1 100%;
+            display: flex;
+            align-items: center;
+            cursor: text;
+        }
+
+        .icon_search {
+            width: 64px;
+            height: 38px;
+            background-color: hsla(0, 0%, 100%, .08);
+            border: 1px solid hsl(0, 0%, 18.82%);
+            border-left: none;
+            border-radius: 0 40px 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .icon_search:hover {
+            background-color: rgba(255, 255, 255, 0.16);
+        }
+
+        .utility {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 0 0 auto;
+            color: white;
+        }
+
+        .icon_create {
+            background-color: rgba(255, 255, 255, 0.08);;
+            border: none;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 18px;
+            color: #fff;
+            padding: 0 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-flex;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .icon_create:hover {
+            background-color: rgba(255, 255, 255, 0.16);
+        }
+
+        /* utliity */
+        .icon_button {
+            width: 40px;
+            height: 40px;
+            margin-left: 12px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .icon_plus {
+            font-size: 16px;
+            padding-right: 10px;
+        }
+
+        .icon_button:hover {
+            background-color: rgba(255, 255, 255, 0.16);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo_area">
+            <button class="dock_expander"></button>
+            <a href="#">
+                <img src="img/yt_logo.png" alt="LOGO" class="yt_logo">
+                <p>YouTube</p>
+            </a>
+        </div>
+
+        <form class="center">
+            <div class="searchbar">
+                <!-- <input type="search_field" type="text" title="Search"> -->
+            </div>
+            <button class="icon_search" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="icon_button">
+                <i class="fa-solid fa-microphone"></i>
+            </button>
+        </form>
+
+        <div class="utility">
+            <p>
+                <button class="icon_create">
+                    <div class="icon_plus"><i class="fa-solid fa-plus"></i></div>
+                    <div>Create</div>
+                </button>
+            </p>
+            <p class="icon_notification">
+                <button class="icon_button">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+            </p>
+            <p class="icon_user">
+                <button class="icon_button">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </p>
+        </div>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <div class="side_collapsed">
+        </div>
+
+        <div class="video_list">
+        </div>
+    </main>
+</body>
+
+</html>

@@ -2,43 +2,45 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>에이블리 | 전상품 무료목적</title>
     <style>
-        /* Main Utility*/
         html {
             scroll-behavior: smooth;
         }
+
         body {
             margin: 0;
         }
 
-        /* body */
         .topbar_content {
             gap: 8px;
             display: inline-flex;
             vertical-align: middle;
-            font-family: "__Pretendard_a4ae19", "__Pretendard_Fallback_a4ae19";
+            font-family: sans-serif;
             text-decoration: none;
         }
+
         .topbar_top {
             display: flex;
             padding: 12px 10px;
-            box-sizing: border-box;
             height: 60px;
             width: 100%;
             align-items: center;
             justify-content: space-between;
             background-color: rgb(255, 81, 96);
         }
+
         .topbar_left {
             gap: 8px;
             display: flex;
             align-items: center;
         }
+
         .ably-icon {
             display: flex;
             width: 36px;
@@ -47,12 +49,12 @@
             border-radius: 8px;
             align-items: center;
             justify-content: center;
-            font-family: sans-serif;
             font-size: 10px;
             font-weight: bold;
             color: #1F1F1F;
             box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
         }
+
         .topbar_text {
             margin: 0;
             line-height: 16px;
@@ -61,6 +63,7 @@
             font-weight: 400;
             color: #fff;
         }
+
         .topbar_button {
             cursor: pointer;
             border: 1px solid #ddd;
@@ -71,52 +74,96 @@
             font-weight: 600;
             color: #1F1F1F;
             background-color: #fff;
+            margin: 30px;
         }
+
         .topbar_bottom {
-            box-sizing: border-box;
-            position: relative;
             width: 100%;
             height: 48px;
             display: flex;
             align-items: center;
-            gap: 0px;
         }
+
         .search_icon {
             color: #666;
             width: 20px;
             height: 20px;
-            vertical-align: middle;
         }
+
         .searchbar_visual {
-            padding: 0px 10px;
+            padding: 0 10px;
             height: 38px;
             border-radius: 8px;
-            background-color: rgb(238, 238, 238);
+            background-color: #eee;
             cursor: pointer;
             width: calc(100% - 62px);
-            margin: 0px 16px 0px 16px;
+            margin: 0 16px;
             font-weight: 600;
-            letter-spacing: -.4px;
-            line-height: 18px;
             font-size: 14px;
             color: #777;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
         .shop_icon {
             color: #666;
-            vertical-align: middle;
             font-size: 24px;
-            margin: 0px 16px 0px 0px;
+            margin-right: 16px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-track img {
+            width: 600px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        button.prev,
+        button.next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        button.prev {
+            left: 0px;
+        }
+
+        button.next {
+            right: 0px;
         }
 
         .item-wrapper {
-            max-width: 767px;
-            margin: 0 auto;
-            margin-top: 122.81px;
+            max-width: 1199px;
+            margin: 123px auto 0;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .item {
             width: 50%;
-            float: left;
             box-sizing: border-box;
             padding: 12px;
         }
@@ -133,9 +180,6 @@
         }
 
         @media screen and (min-width:768px) {
-            .item-wrapper {
-                max-width: 1199px;
-            }
             .item {
                 width: 33.33%;
             }
@@ -146,20 +190,18 @@
                 width: 25%;
             }
         }
-
     </style>
-    
 </head>
 
 <body>
     <div>
         <div>
             <div class="topbar_top">
-            <div class="topbar_content topbar_left">
-                <div class="ably-icon">ABLY</div>
-                <p class="topbar_text">앱에서 더 많은 상품을 볼 수 있어요!</p>
-            </div>
-            <button class="topbar_button">앱에서 보기</button>
+                <div class="topbar_content topbar_left">
+                    <div class="ably-icon">ABLY</div>
+                    <p class="topbar_text">앱에서 더 많은 상품을 볼 수 있어요!</p>
+                </div>
+                <button class="topbar_button">앱에서 보기</button>
             </div>
             <div class="topbar_bottom">
                 <a href="https://m.a-bly.com/search" class="topbar_bottom searchbar_visual">
@@ -174,10 +216,47 @@
                 </div>
             </div>
         </div>
-        <div></div>
+        <div>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="https://d3ha2047wt6x28.cloudfront.net/i-gMmWrxXdQ/pr:RECTANGLE_BANNER/czM6Ly9pbWcuYS1ibHkuY29tL2Jhbm5lci9pbWFnZXMvYmFubmVyX2ltYWdlXzE2OTMxODg2NjE5NDY4NDQucG5n"
+                        style="object-fit: initial;" class="sc-ee96cc47-2 dOwiuV">
+                    <img src="https://d3ha2047wt6x28.cloudfront.net/_StQ2g5oc2s/pr:RECTANGLE_BANNER/czM6Ly9pbWcuYS1ibHkuY29tL2Jhbm5lci9pbWFnZXMvYmFubmVyX2ltYWdlXzE3NDc5ODk4NjgwMzU2MjUuZ2lm"
+                        style="object-fit: initial;" class="sc-ee96cc47-2 dOwiuV">
+                    <img src="https://d3ha2047wt6x28.cloudfront.net/2jySoI6EKIs/pr:RECTANGLE_BANNER/czM6Ly9pbWcuYS1ibHkuY29tL2Jhbm5lci9pbWFnZXMvYmFubmVyX2ltYWdlXzE3NDc3NDcxNjcxNjg4NjUuanBn"
+                        style="object-fit: initial;" class="sc-ee96cc47-2 dOwiuV">
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <script>
+                var track = document.querySelector('.carousel-track');
+                var slides = Array.from(track.children);
+                var prevButton = document.querySelector('.prev');
+                var nextButton = document.querySelector('.next');
+                var currentIndex = 0;
+
+                function showSlide() {
+                    var slideWidth = slides[0].offsetWidth;
+                    track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
+                }
+
+                nextButton.addEventListener('click', function () {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    showSlide();
+                });
+
+                prevButton.addEventListener('click', function () {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    showSlide();
+                });
+
+                showSlide();
+            </script>
+        </div>
         <div></div>
     </div>
-    
+
     <div class="item-wrapper">
         <div class="item">
             <img
