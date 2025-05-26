@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+        header {
+            font: 20px "Arial Black";
+            padding: 0.1px;
+            /* background: whitesmoke; */
+            text-align: center;
+            color: #135;
+            text-shadow:
+                2px 2px #246,
+                3px 3px #357,
+                4px 4px #468,
+                5px 5px #579,
+                6px 6px #68a,
+                7px 7px #79b,
+                7px 7px #8ac;
+        }
+        h2 {text-align: center;}
+        table {
+            width: 100%;
+            max-width: 1000px;
+            border-collapse: collapse;
+            margin: 0 auto 20px;
+        }
+        table, th, td {border: 1px solid;}
+        th {width: 12.5%;}
+        th, td {
+            padding: 16px;
+            text-align: center;
+        }
+
+        form {
+            border: 1px solid;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        form input {width: 94.5%; padding: 2.5%;
+        }
+        form > button {justify-content: center; display: flex; margin: auto;}
+    </style>
+
+    <script>
+        const students = [];
+
+        // 학생타입의 생성자 합수를 정의
+        function Student (no, name, kor, eng, mat) {
+            this.no = no;
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+            this.total = () => this.kor + this.eng + this.mat;
+            this.avg = () => parseInt(this.total () / 3);
+        };
+
+        // Default Data
+        students.push(new Student(1, 'Jack', 90, 90, 80));
+        students.push(new Student(2, 'Jimmy', 70, 74, 75));
+        students.push(new Student(3, 'Mary', 85, 60, 95));
+
+        // draw array data to screen
+        function list() {
+            const tbody = document.querySelector("tbody");
+            let str = "";
+            for(let i = 0 ; i < students.length ; i++) {
+                str += "<tr>"
+                str += `<td>${students[i].no}</td>`;
+                str += `<td>${students[i].name}</td>`;
+                str += `<td>${students[i].kor}</td>`;
+                str += `<td>${students[i].eng}</td>`;
+                str += `<td>${students[i].mat}</td>`;
+                str += `<td>${students[i].total()}</td>`;
+                str += `<td>${students[i].avg()}</td>`;
+                str += `<td><button>Delete</button></td>`;
+                str += "</tr>"
+            }
+            tbody.innerHTML = str;
+        }
+        window.onload = () => list();
+    </script>
+
+</head>
+<body>
+    <header id="header">
+        <h1>
+            Students Management
+        </h1>
+    </header>
+    <h2>생성자 함수 예제</h2>
+    <table>
+        <caption><h3>2025 tj student management</h3></caption>
+        <thead>
+            <tr>
+                <th>Student #</th>
+                <th>name</th>
+                <th>Korea</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Total</th>
+                <th>Average</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>George</td>
+                <td>90</td>
+                <td>80</td>
+                <td>70</td>
+                <td>240</td>
+                <td>70</td>
+                <td><button>Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2>Data Input</h2>
+    <form>
+        <div>
+            <p><label for="no">student #</label></p>
+            <p><input id="no" name="no"></p>
+        </div>
+        <div>
+            <p><label for="name">name</label></p>
+            <p><input id="name" name="name"></p>
+        </div>
+        <div>
+            <p><label for="kor">Korean</label></p>
+            <p><input id="kor" name="kor"></p>
+        </div>
+        <div>
+            <p><label for="eng">English</label></p>
+            <p><input id="eng" name="eng"></p>
+        </div>
+        <div>
+            <p><label for="mat">Math</label></p>
+            <p><input id="mat" name="mat"></p>
+        </div>
+        <button>Insert</button>
+    </form>
+    <script>
+        // add students to array
+        document.querySelector("form").addEventListener("submit", function() {
+            event.preventDefault();
+            console.log("clic test");
+
+            students.push(new Student(
+                this.no.value, 
+                this.name.value,
+                this.kor.value / 1,
+                this.eng.value / 1,
+                this.mat.value / 1
+            ));
+            list();
+        });
+        // remove students from array
+        document.querySelector("tbody").addEventListener("click", function() {
+            // console.log(event.target.tagName);
+            if (event.target.tagName === "BUTTON") {
+                // console.log(event.target.closest("tr").querySelector("td").innerTEXT);
+                // console.log(event.target.parentElement.parentElement);
+                const no = event.target.closest("tr").querySelector("td").innerTEXT;
+
+                // index
+                let idx = -1;
+                // for (let i = 0 ; i < students.length ; i++) {
+                //     if (students[i].no == no) {
+                //         idx = i;
+                //     }
+                // }
+                for (let i of students) {
+                    if (i.no == no) {
+                        idx = i;
+                    }
+                }
+                students.splice(idx, 1);
+                list();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver</title>
+    <style>
+        .case {
+            background-color: var(--color_block_bg);
+            width: 420px;
+            height: 172px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px #e3e5e8;
+            box-sizing: border-box;
+            opacity: 1;
+            /* overflow: hidden; */
+
+        }
+
+        div>div a {
+            text-decoration: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: 1px solid #e3e5e8;
+            color: #606060;
+            margin: 0 0 18px 18px;
+            box-sizing: border-box;
+            width: 30px;
+            font-size: 1rem;
+            line-height: 18px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        div > div:nth-child(2) {
+            justify-content: start;
+            display: inline-block;     
+            float: right;
+            margin: 0;
+            padding: 0;
+        }
+        div > div:nth-child(2) ul {
+        }
+        div > div:nth-child(2) ul li {
+            display: flex;        
+            float: inline-start;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div > div:nth-child(2) ul li img {
+            width: 90px;
+        }
+
+        div>div>div {
+            font-family: NanumSquareNeo, sans-serif;
+            font-size: 1.3rem;
+            line-height: 23px;
+            font-weight: 800;
+            flex-shrink: 0;
+            width: 80px;
+            /* margin-right: 18px; */
+        }
+
+        div>div:nth-child(1) {
+            display: inline-block;
+            padding: 10px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="case">
+        <div>
+            <div>
+                <span>주목할</span>
+                <span>만한</span>
+                <span>상품은?</span>
+            </div>
+            <a href="https://recoshopping.naver.com/">AD</a>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <img src="https://phinf.pstatic.net/dthumb/?src=https://shopping-phinf.pstatic.net/main_6714710/6714710627.29.jpg&amp;service=shopad&amp;type=f250" alt="">
+                </li>
+                <li>
+                    <img src="https://phinf.pstatic.net/dthumb/?src=https://shopping-phinf.pstatic.net/main_6714710/6714710627.29.jpg&amp;service=shopad&amp;type=f250" alt="">
+                </li>
+                <li>
+                    <img src="https://phinf.pstatic.net/dthumb/?src=https://shopping-phinf.pstatic.net/main_6714710/6714710627.29.jpg&amp;service=shopad&amp;type=f250" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

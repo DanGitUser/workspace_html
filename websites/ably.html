@@ -36,8 +36,8 @@
             display: inline-flex;
             vertical-align: middle;
             font-family: sans-serif;
-            text-decoration: none;
             padding: 12px 10px;
+            text-decoration: none;
         }
 
         .topbar_top {
@@ -249,30 +249,6 @@
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
             </div>
-            <script>
-                var track = document.querySelector('.carousel-track');
-                var slides = Array.from(track.children);
-                var prevButton = document.querySelector('.prev');
-                var nextButton = document.querySelector('.next');
-                var currentIndex = 0;
-
-                function showSlide() {
-                    var slideWidth = slides[0].offsetWidth;
-                    track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
-                }
-
-                nextButton.addEventListener('click', function () {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    showSlide();
-                });
-
-                prevButton.addEventListener('click', function () {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                    showSlide();
-                });
-
-                showSlide();
-            </script>
         </div>
         <div></div>
     </div>
@@ -399,6 +375,30 @@
             <p>[꾸안꾸]보호본능 오버핏, 섬머데일리 빈티지 생지 데님</p>
         </div>
     </div>
+    <script>
+        var track = document.querySelector('.carousel-track');
+        var slides = Array.from(track.children);
+        var prevButton = document.querySelector('.prev');
+        var nextButton = document.querySelector('.next');
+        var currentIndex = 0;
+
+        function showSlide() {
+            var slideWidth = slides[0].offsetWidth;
+            track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
+        }
+
+        nextButton.addEventListener('click', function () {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide();
+        });
+
+        prevButton.addEventListener('click', function () {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide();
+        });
+
+        showSlide();
+    </script>
 </body>
 
 </html>

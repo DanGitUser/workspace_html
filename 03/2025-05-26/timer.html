@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuff</title>
+    <script>
+        // action done during intervals of set value
+        // var abs = function (a) {
+        //     return a > 0 ? a : -a;
+        // }
+
+        // abs = (a) => a > 0 ? a : -a;
+
+        window.onload = function () {
+            setInterval(function () {
+                document.querySelector("h2").innerText = new Date().toLocaleString();
+            }, 1000);
+        };
+        window.onload = function () {
+            setInterval(function () {
+                document.querySelector("h2").innerText = new Date().toLocaleString();
+            }, 1000);
+        };
+        window.onload = function () {
+            setInterval(() => {
+                document.querySelector("h2").innerText = new Date().toLocaleString();
+            }, 1000);
+        };
+        window.onload = () => setInterval(
+            () => document.querySelector("h2").innerText = new Date().toLocaleString(), 1000
+            );
+        window.onload = _ => setInterval(() =>
+                document.querySelector("h2").innerText = new Date().toLocaleString(), 1000
+            );
+        window.onload = function(_) {
+            setInterval(() => document.querySelector("h2").innerText = new Date().toLocaleString(), 1000)
+        };
+        window.onload = _ => setInterval(
+            () => document.querySelector("h2").innerText = new Date().toLocaleString(), 1000
+        );
+        window.onload = setInterval => document.querySelector("h2").innerText = new Date().toLocaleString(), 1000;
+    </script>
+</head>
+
+<body>
+    <h2></h2>
+</body>
+
+</html>

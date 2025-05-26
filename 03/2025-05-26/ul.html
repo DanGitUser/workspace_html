@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://cdn.royalcanin-weshare-online.io/gEB4bIsBRYZmsWpcBRAw/v5/shiba-inu-dog-outdoors">
+    <hr>
+    <input><button>Image Change</button>
+    <script>
+        const input = document.querySelector("input").value;
+        document.querySelector("button").addEventListener("click", function() {
+            const input = document.querySelector("input")["value"];
+            const img = document.querySelector("img");
+            img.src = input;
+            img.style.border = '1px solid';
+            // img.style["border-radius"] = '50%';
+            img.style.borderRadius = '20px';
+            img.style.borderColor = '#222'
+        });
+    </script>
+</body>
+</html>
