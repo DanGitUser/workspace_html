@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naver</title>
     <style>
+
+        body {
+            margin: 0;
+        }
+
         .case {
             background-color: var(--color_block_bg);
             width: 420px;
@@ -15,8 +20,15 @@
             box-shadow: 0 0 0 1px #e3e5e8;
             box-sizing: border-box;
             opacity: 1;
+            justify-content: center;
+            margin: auto;
             /* overflow: hidden; */
 
+        }
+
+        div > div:nth-child(1) {
+            width: 70px;
+            padding: 0;
         }
 
         div>div a {
@@ -33,26 +45,6 @@
             line-height: 18px;
             border-radius: 4px;
             text-align: center;
-        }
-
-        div > div:nth-child(2) {
-            justify-content: start;
-            display: inline-block;     
-            float: right;
-            margin: 0;
-            padding: 0;
-        }
-        div > div:nth-child(2) ul {
-        }
-        div > div:nth-child(2) ul li {
-            display: flex;        
-            float: inline-start;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        div > div:nth-child(2) ul li img {
-            width: 90px;
         }
 
         div>div>div {
