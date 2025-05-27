@@ -1,34 +1,34 @@
 // doubled n배
-const doubled = [1,2,3].map(v => v * 2); // 두(2)배
+const doubled = [1, 2, 3].map(v => v * 2); // 두(2)배
 console.log(doubled);
 
 // filter 걸러내기
-const evens = [1,2,3,4].filter(v => v % 2 === 0); // 짝수 걸러내기
+const evens = [1, 2, 3, 4].filter(v => v % 2 === 0); // 짝수 걸러내기
 console.log(evens);
 
 //find 찾기 
-const firstEven = [1,3,4,6].find(v => v % 2 === 0) //짝수 조건
+const firstEven = [1, 3, 4, 6].find(v => v % 2 === 0) //짝수 조건
 console.log(firstEven); // 4
 
 // reduce(fn, 초기값)
-const sum = [1,2,3,4].reduce((prev, cur) => prev + cur, 0);
+const sum = [1, 2, 3, 4].reduce((prev, cur) => prev + cur, 0);
 console.log(sum); // 1 + 2 + 3 + 4 = 10
 
 // some, every >> boolean
-console.log([1,2,3].some(v => v === 0)); // 일부가 짝수인지
-console.log([1,2,3].every(v => v === 0)); // 전부가 짝수인지
+console.log([1, 2, 3].some(v => v === 0)); // 일부가 짝수인지
+console.log([1, 2, 3].every(v => v === 0)); // 전부가 짝수인지
 
 // includes 포함
-console.log([1,2,3].includes(1));
-console.log([1,2,3].includes(4));
+console.log([1, 2, 3].includes(1));
+console.log([1, 2, 3].includes(4));
 
 
 // 연습하기
 // users 배열
 const users = [
-    {name: '새똥이', age:14},
-    {name: '게똥이', age:24},
-    {name: '소똥이', age:34}
+    { name: '새똥이', age: 14 },
+    { name: '게똥이', age: 24 },
+    { name: '소똥이', age: 34 }
 ];
 
 // 20세이상인 사람들의 이름만 추출 (.filer / .map 공부하기)
@@ -49,15 +49,15 @@ const result = arr.forEach(v => v * 2);
 console.log(result);
 
 // 이 배열을 가지고 짝수만 골라서 제곱으로 이루어진 배열을 반환
-const numbers = [1,2,3,4,5,6,7];
+const numbers = [1, 2, 3, 4, 5, 6, 7];
 // 답:
 console.log(numbers.filter(v => v % 2 === 0).map(v => v * v));
 
 // cart에 들은 상품들의 총합 계산 reduce
 const cart = [
-    {item: "감자", count: 3, price: 1000},
-    {item: "고구마", count: 2, price: 1500},
-    {item: "양파", count: 5, price: 500}
+    { item: "감자", count: 3, price: 1000 },
+    { item: "고구마", count: 2, price: 1500 },
+    { item: "양파", count: 5, price: 500 }
 ];
 // 답:
 // const ret = cart.reduce((prev, curr) => prev + curr.qty * curr.price, 0);
@@ -69,10 +69,10 @@ console.log(ret);
 // find
 // 300패이지가 넘는 첵의 의름을 조회
 const books = [
-    {title: "JavaScript 기초", pages: 120},
-    {title: "ES6 완벽 가이드", pages: 350},
-    {title: "CSS 디자인", pages: 200},
-    {title: "HTML5", pages: 400}
+    { title: "JavaScript 기초", pages: 120 },
+    { title: "ES6 완벽 가이드", pages: 350 },
+    { title: "CSS 디자인", pages: 200 },
+    { title: "HTML5", pages: 400 }
 ];
 // 답:
 // console.log(books.find(v => v.pages > 300).map(v => v.title));
@@ -81,19 +81,19 @@ console.log(result2.title + "은 300패이지가 넘는다");
 
 //reduce 가장 고가의 상품
 const products = [
-    {name: "노트북", price: 1200000},
-    {name: "키보드", price: 150000},
-    {name: "마우스", price: 50000},
-    {name: "모니터", price: 300000}
+    { name: "노트북", price: 1200000 },
+    { name: "키보드", price: 150000 },
+    { name: "마우스", price: 50000 },
+    { name: "모니터", price: 300000 }
 ];
 // 답:
 // products.reduce((prev, curr) => prev > curr, 0)
-console.log(products.reduce((prev, curr) => { return prev.price > curr.price ? prev.price : curr.price}, 0).name);
+console.log(products.reduce((prev, curr) => { return prev.price > curr.price ? prev.price : curr.price }, 0).name);
 
-for(let i = 0 ; i < 10 ; i++) {
+for (let i = 0; i < 10; i++) {
 
 };
-const obj = {a:1, b:2};
+const obj = { a: 1, b: 2 };
 for (let i in obj) {
     console.log(obj[i]);
 };
@@ -109,7 +109,46 @@ const now = new Date();
 console.log(now);
 console.log(now.toString());
 console.log(now.getDay());
-console.log(now.getMonth());
+console.log(now.getMonth()); // 0 ~11
 console.log(now.getDate());
 console.log(now.getFullYear());
 console.log(now.toDateString());
+
+ function drawCalendar(month, year) {
+            const date = new Date(year, month);
+            date.setDate(1);
+            const firstDay = date.getDay();   
+            const lastDate = new Date(year, month + 1, 0).getDate();
+            // const allMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            // let lastDate = allMonths[month];
+            // if (month === 1 && year % 4 === 0 && year % 100 !== 0 || year % 400 == 0) {
+            //     lastDate = 29;
+            // }
+            
+            let str = "<tr>";
+
+            for (let i = 0 ; i < firstDay ; i++) {
+                str += `<td></td>`;
+            }
+            
+            for (let i = 1 ; i <= lastDate ; i++) {
+                str += `<td>${i}</td>`; // 날짜 집어넣기기
+
+                if ((i + firstDay) % 7 == 0) {
+                    str += "</tr><tr>" // 렬 밖꾸기기
+                }
+            }
+            
+            const totalFilled = firstDay + lastDate;
+            const remaining = 7 - (totalFilled % 7);
+
+            if (remaining < 7) {
+                for (let i = 0 ; i < remaining ; i++) {
+                    str += `<td></td>`;
+                }
+            }
+
+            str += "</tr>";
+        }
+
+console.log(drawCalendar());

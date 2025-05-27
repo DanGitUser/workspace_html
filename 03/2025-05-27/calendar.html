@@ -9,12 +9,12 @@
         table {border-collapse: collapse; width: 100%; max-width: 1200px; margin: 0 auto;}
         table, th, td {border: 1px solid black;}
         table h2 {display: inline-block;}
-        table caption > * {margin: 16px 20px; vertical-align: top;}
+        table caption > * {margin: 16px 20px; vertical-align: middle;}
         table caption button {
             border: 1px solid black; background: transparent;
             cursor: pointer; width: 30px; height: 30px;
             line-height: 16px; border-radius: 50%;
-            transition: all .3s; margin-top: 20px;
+            transition: all .3s; margin-top: 19px;
         }
         table caption button:hover {
             box-shadow: 0 0 3px #555, 2px 2px 5px #ddd;
@@ -25,52 +25,105 @@
         tr > *:nth-child(7) {color: blue;}
     </style>
     <script>
-        function drawCalendar() {
-            const date = new Date();
-            const year = date.getFullYear();
-            // const month = date.getMonth();
-            const month = date.getMonth();
-            // let m = "<hr>"
-            // for (let i = 0 ; i < month ; i++) {
-            //     m += `<hr>${month}</hr>`;
+        function drawCalendar(month, year) { 
+            const date = new Date(year, month);//date 가 생략되고 자동의로 월의 1번제 날로 선언하다?
+            // date.setDate(1); // 월의 1번제 날로 고정
+            const firstDay = date.getDay();   
+            const lastDate = new Date(year, month + 1, 0).getDate();
+            // const allMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            // let lastDate = allMonths[month];
+            // if (month === 1 && year % 4 === 0 && year % 100 !== 0 || year % 400 == 0) {
+            //     lastDate = 29;
             // }
-
-            const allMonths = [31,28,31,30,31,30,31,31,30,31,];
-            let lastDate = allMonths[month];
-            if (month === 1 && year % 4 === 0 && year % 100 !== 0 || year % 400 == 0) {
-                lastDate = 29;
-            }
-
-            date.setDate(1);
-            const firstDay = date.getDay();
             
             let str = "<tr>";
+
             for (let i = 0 ; i < firstDay ; i++) {
                 str += `<td></td>`;
             }
-            for(let i = 1 ; i <= lastDate ; i++) {
-                str += `<td>${i <= lastDate && i > 0 ? i : ''}</td>`;
+            
+            for (let i = 1 ; i <= lastDate ; i++) {
+                str += `<td>${i}</td>`; // 날짜 집어넣기기
+
                 if ((i + firstDay) % 7 == 0) {
-                    str += "</tr><tr>"
+                    str += "</tr><tr>" // 렬 밖꾸기기
                 }
             }
             
+            const totalFilled = firstDay + lastDate;
+            const remaining = 7 - (totalFilled % 7);
+
+            if (remaining < 7) {
+                for (let i = 0 ; i < remaining ; i++) {
+                    str += `<td></td>`;
+                }
+            }
+
             str += "</tr>";
+
             document.querySelector("table tbody").innerHTML = str;
         }
+        // window.onload = function() {
+        //     const currentDate = new Date();
+        //     drawCalendar(currentDate.getMonth(), currentDate.getFullYear());
+        //     // drawCalendar(5, 2025);
+        // }
+        let currentMonth, currentYear;
+        const now = new Date();
+        
         window.onload = function() {
-            drawCalendar();
+            currentMonth = now.getMonth();
+            currentYear = now.getFullYear();
+            drawCalendar(currentMonth, currentYear);
+            updateDate();
+        };
+
+        function updateDate() {
+            const dateString = new Date(currentYear, currentMonth);
+            let dateToString = dateString.toDateString();
+            document.getElementById("dateString").innerHTML = dateToString;
         }
+        
+        function previousMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            drawCalendar(currentMonth, currentYear);
+            updateDate();
+            
+        }
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            drawCalendar(currentMonth, currentYear);
+            updateDate();
+        }
+        function previousYear() {
+            currentYear--;
+            drawCalendar(currentMonth, currentYear);
+            updateDate();
+        }
+        function nextYear() {
+            currentYear++;
+            drawCalendar(currentMonth, currentYear);
+            updateDate();
+        }
+
     </script>
 </head>
 <body>
     <table>
         <caption>
-            <button><i class="fa-solid fa-angles-left"></i></button>
-            <button><i class="fa-solid fa-angle-left"></i></i></button>
-            <h2>2025.05.27</h2>
-            <button><i class="fa-solid fa-angle-right"></i></button>
-            <button><i class="fa-solid fa-angles-right"></i></i></button>
+            <button onclick="previousYear()"><i class="fa-solid fa-angles-left"></i></button>
+            <button onclick="previousMonth()"><i class="fa-solid fa-angle-left"></i></i></button>
+            <h2 id="dateString"></h2>
+            <button onclick="nextMonth()"><i class="fa-solid fa-angle-right"></i></button>
+            <button onclick="nextYear()"><i class="fa-solid fa-angles-right"></i></i></button>
         </caption>
         <thead>
             <tr>
