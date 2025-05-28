@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .join-frm {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .join-frm input {
+            width: 95%; padding: 8px;
+        }
+        .join-frm button {
+            width: 455px;
+            padding: 8px;
+        }
+        .join-frm div {
+            margin: 32px 0;
+        }
+        .join-frm .valid-msg {font-size: 12px; color: red; visibility: hidden;}
+        .join-frm .valid-msg.active{visibility: visible;}
+    </style>
+</head>
+<body></body>
+    <header></header>
+    <main>
+        <!-- 
+        ID (lowercase Eng only), 
+         PW > 8, 
+         PW CHECK = PW, 
+         NAME, 
+         EMAIL (RegEx)
+         -->
+        <form name="frm" class="join-frm">
+            <div>
+                <p><label for="id">ID</label></p>
+                <p><input type="text" name="id" id="id"></p>
+                <p class="valid-msg">* lowercase English characters only</p>
+            </div>
+            <div>
+                <p><label for="pw">PW</label></p>
+                <p><input type="password" name="pw" id="pw"></p>
+                <p class="valid-msg">* minumum of Eight characters</p>
+            </div>
+            <div>
+                <p><label for="pwck">PW CHECK</label></p>
+                <p><input type="password" name="pwck" id="pwck"></p>
+                <p class="valid-msg">* password Must match</p>
+            </div>
+            <div>
+                <p><label for="name">NAME</label></p>
+                <p><input type="text" name="name" id="name"></p>
+                <p class="valid-msg">* name Must be letters only</p>
+            </div>
+            <div>
+                <p><label for="mail">EMAIL</label></p>
+                <p><input type="text" name="mail" id="mail"></p>
+                <p class="valid-msg">* Invalid email format ()</p>           
+            </div>
+            <button disabled>Sign-Up</button>
+        </form>
+        <script>
+            function validate(target, regexp) {
+                return regexp.test(target);
+            }
+            // console.log(document.querySelectorAll(".join-frm input"));
+            const fields = document.querySelectorAll(".join-frm input");
+            const regexps = {
+                id : /^[a-z]+$/,
+                pw : /^[\w]{8,}/,
+                pwck : null,
+                name : /^[가-힣A-Za-z]{2,}/,
+                // mail : /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/
+                mail : /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+            }
+            function validateField(input) {
+                const name = input.id;
+                const msgClassList = input.closest("div").querySelector(".valid-msg").classList;
+
+                if (name === "pwck") {
+                    document.querySelector("#pw").value === input.value ? msgClassList.remove("active") : msgClassList.add("active");
+                    const valid = document.querySelector("#pw").value === input.value;
+                    msgClassList.toggle("active", !valid);
+                    return valid;
+                } else if (regexps[name]) {
+                    // validate(input.value, regexps[name]) ? msgClassList.remove("active") : msgClassList.add("active")
+                    const valid = validate(input.value, regexps[name]);
+                    msgClassList.toggle("active", !valid);
+                    return valid;
+                }
+            }
+            
+            fields.forEach(input => {
+                input.addEventListener("input", function() {
+                    validateField(input);
+                });
+            });
+
+            document.querySelector(".join-frm").addEventListener("submit", e => {
+                let isValid = true;
+                inputs.forEach(input => {
+                    const valid = validateField(input);
+                    if(!valid) isValid = false;
+                })
+                if(!isValid) {
+                    event.preventDefault();
+                    // alert("Check input")
+                }
+                console.log("Confirm");
+                
+            });
+            // for (let i = 0 ; i < 5 ; i++) {
+            //     fields[i].onkeyup = function() {
+            //         const cl = this.closest("div").querySelector(".valid-msg").classList;
+            //         validate(this.value, regexps[i]) ? cl.remove("active") : cl.add("active");
+            //     }
+            // }
+
+            // document.querySelector("#id").onkeyup = function() {
+            //     const cl = this.closest("div").querySelector(".valid-msg").classList;
+            //     validate(this.value, /^[a-z]+$/) ? cl.remove("active") : cl.add("active");
+            //     // console.log(cl);
+            //     // cl.add("active");
+            //     // console.log(validate(document.querySelector("#id").value, /^[a-z]+$/));
+            // }
+            // document.querySelector("#pw").onkeyup = function() {
+            //     const cl = this.closest("div").querySelector(".valid-msg").classList;
+            //     validate(this.value, /^[\w]{8,}/) ? cl.remove("active") : cl.add("active");
+            // }
+            // document.querySelector("#pwck").onkeyup = function() {
+            //     const cl = this.closest("div").querySelector(".valid-msg").classList;
+            //     validate(this.value, new RegExp("^"+document.querySelector("#pw").value+"$")) ? cl.remove("active") : cl.add("active");
+            // }
+            // document.querySelector("#name").onkeyup = function() {
+            //     const cl = this.closest("div").querySelector(".valid-msg").classList;
+            //     validate(this.value, /^[A-Za-z]+$/) ? cl.remove("active") : cl.add("active");
+            // }
+            
+        </script>
+    </main>
+    <footer></footer>
+</body>
+</html>

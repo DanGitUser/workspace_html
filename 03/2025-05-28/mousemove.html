@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            justify-self: center;
+        }
+
+        .area {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            border: 1px solid;
+            margin: 0 auto;
+        }
+
+        .hori {
+            height: 3px;
+            background: url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Color_changing_gradient_rainbow.gif?20211104064853");
+            /* transform: translateY(); */
+        }
+
+        .verti {
+            width: 3px;
+            height: 100%;
+            background: url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Color_changing_gradient_rainbow.gif?20211104064853");
+            /* transform: translateX(); */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>mouse pointer location test</h2>
+    <div class="area">
+        <div class="hori"></div>
+        <div class="verti"></div>
+    </div>
+    <p>x : 0, y : 0</p>
+    <script>
+        document.querySelector(".area").addEventListener("mousemove", e => {
+            console.log(e.offsetX, e.offsetY);
+            document.querySelector("p").innerHTML = `x : ${e.offsetX}, y : ${e.offsetY}`;
+            document.querySelector(".hori").style.transform = `translateY(${e.offsetY}px`;
+            document.querySelector(".verti").style.transform = `translateX(${e.offsetX}px`;
+        });
+    </script>
+</body>
+
+</html>

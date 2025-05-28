@@ -113,42 +113,4 @@ console.log(now.getMonth()); // 0 ~11
 console.log(now.getDate());
 console.log(now.getFullYear());
 console.log(now.toDateString());
-
- function drawCalendar(month, year) {
-            const date = new Date(year, month);
-            date.setDate(1);
-            const firstDay = date.getDay();   
-            const lastDate = new Date(year, month + 1, 0).getDate();
-            // const allMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-            // let lastDate = allMonths[month];
-            // if (month === 1 && year % 4 === 0 && year % 100 !== 0 || year % 400 == 0) {
-            //     lastDate = 29;
-            // }
-            
-            let str = "<tr>";
-
-            for (let i = 0 ; i < firstDay ; i++) {
-                str += `<td></td>`;
-            }
-            
-            for (let i = 1 ; i <= lastDate ; i++) {
-                str += `<td>${i}</td>`; // 날짜 집어넣기기
-
-                if ((i + firstDay) % 7 == 0) {
-                    str += "</tr><tr>" // 렬 밖꾸기기
-                }
-            }
-            
-            const totalFilled = firstDay + lastDate;
-            const remaining = 7 - (totalFilled % 7);
-
-            if (remaining < 7) {
-                for (let i = 0 ; i < remaining ; i++) {
-                    str += `<td></td>`;
-                }
-            }
-
-            str += "</tr>";
-        }
-
 console.log(drawCalendar());

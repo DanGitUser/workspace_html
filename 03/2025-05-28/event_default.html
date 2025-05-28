@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Default Event
+     a , form, button 
+     -->
+     <a href="https://www.naver.com">Naver</a>
+     <textarea></textarea>
+     <div class="keyup"></div>
+     <div class="keydown"></div>
+     <div class="keypress"></div>
+     <script>
+        // document.querySelector("a").onclick = () => confirm("hi");
+        document.querySelector("a").onclick = function() {
+            // confirm("hi");
+            // event.preventDefault();
+            return confirm(this.href + "로 이동하실?"); // prevents Default + event
+        } 
+        const ta = document.querySelector("textarea");
+        ta.onkeydown = function() {
+            document.querySelector(".keydown").innerHTML = `keydown : ${this.value.length}`;
+        }
+        ta.onkeyup = function () {
+            document.querySelector(".keyup").innerHTML = `keyup : ${this.value.length}`;
+        }
+        ta.onkeypress = function () {
+            document.querySelector(".keypress").innerHTML = `keypress : ${this.value.length}`;
+        }
+     </script>
+</body>
+</html>

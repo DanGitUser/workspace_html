@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // click > event type, name
+        // onclick > event attr
+        // event handler
+        // document
+
+    </script>
+</head>
+<body>
+    <a href="#" onclick="alert(this.innerHTML); alert(5)">click Me!</a>
+    <button id="btns">Button</button>
+    <button id="btns">Button</button>
+    <button id="btn1">Button</button>
+    <button id="btn2">Button</button>
+    <script>
+        // const aTag = document.querySelector("a");
+        // aTag.onclick = function() { //listener or Handler
+        //     alert(this.innerHTML);
+        // }
+        // 이밴트 속성에 부여되는 함수 : 이밴트 리스너, 핸들러
+
+        // const btns = document.getElementById("button");
+        // console.log(btns);
+        // console.log(btns.length);
+
+        const btn = document.getElementById("btn1");
+        let date = new Date();
+        let time = date.toLocaleTimeString();
+        btn.onclick = (_) => alert(date);
+        // btn.onclick (alert(time));
+        const btn2 = document.querySelector("#btn2");
+        btn2.addEventListener("click", function(){
+            alert("두번쩨 버튼 클릭");
+        });
+        btn2.addEventListener("click", () => console.log('#'));
+        btn2.addEventListener("click", () => alert("두번쩨 버튼 클릭"));
+    </script>
+</body>
+</html>

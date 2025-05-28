@@ -37,30 +37,41 @@
             // }
             
             let str = "<tr>";
+            let count = 1;
 
-            for (let i = 0 ; i < firstDay ; i++) {
-                str += `<td></td>`;
+            for (let i = 1 - firstDay ; ; i++) {
+                str += `<td>`;
+                str += i <= lastDate && i >= 1 ? i : '';
+                str += `</td>`;
+                count++;
+                if (lastDate <= i && (count - 1) % 7 == 0) break;
+                if (i % 7 == (7 - firstDay) % 7) {
+                    str += "</tr><tr>"
+                } 
             }
+
+            // for (let i = 0 ; i < firstDay ; i++) {
+            //     str += `<td></td>`;
+            // }
             
-            for (let i = 1 ; i <= lastDate ; i++) {
-                str += `<td>${i}</td>`; // 날짜 집어넣기기
+            // for (let i = 1 ; i <= lastDate ; i++) {
+            //     str += `<td>${i}</td>`; // 날짜 집어넣기기
 
-                if ((i + firstDay) % 7 == 0) {
-                    str += "</tr><tr>" // 렬 밖꾸기기
-                }
-            }
+            //     if ((i + firstDay) % 7 == 0) {
+            //         str += "</tr><tr>" // 렬 밖꾸기기
+            //     }
+            // }
             
-            const totalFilled = firstDay + lastDate;
-            const remaining = 7 - (totalFilled % 7);
+            // const totalFilled = firstDay + lastDate;
+            // const remaining = 7 - (totalFilled % 7);
 
-            if (remaining < 7) {
-                for (let i = 0 ; i < remaining ; i++) {
-                    str += `<td></td>`;
-                }
-            }
+            // if (remaining < 7) {
+            //     for (let i = 0 ; i < remaining ; i++) {
+            //         str += `<td></td>`;
+            //     }
+            // }
 
             str += "</tr>";
-
             document.querySelector("table tbody").innerHTML = str;
         }
         // window.onload = function() {
