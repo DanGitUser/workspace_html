@@ -111,7 +111,6 @@
                     // alert("Check input")
                 }
                 console.log("Confirm");
-                
             });
             // for (let i = 0 ; i < 5 ; i++) {
             //     fields[i].onkeyup = function() {
@@ -139,7 +138,9 @@
             //     const cl = this.closest("div").querySelector(".valid-msg").classList;
             //     validate(this.value, /^[A-Za-z]+$/) ? cl.remove("active") : cl.add("active");
             // }
-            
+            for (let i in window) {
+            document.write(`<p>${i} :: ${window[i]}</p>`);
+            }
         </script>
     </main>
     <footer></footer>

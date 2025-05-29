@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunc() {
+            console.log("hello");
+            
+        }
+        // let window ={document : {}, }
+        // for (let i in window) {
+        //     document.write(`<p>${i} :: ${window[i]}</p>`);
+        // }
+
+        
+    </script>
+</head>
+<body>
+    <button>Click</button>
+    <script>
+        document.querySelector("button").addEventListener("click", function() {
+            let w = window.open("../2025-05-28/validate.html",'','width=300, height=300');
+            console.log(w);
+            const inter = setInterval(() => {
+                w.moveBy(100, 100)
+            }, 100);
+            setTimeout(() => {
+                w.close();
+                clearInterval(inter);
+            }, 3000);
+        });
+        
+    </script>
+</body>
+</html>

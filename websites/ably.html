@@ -181,33 +181,21 @@
             flex-wrap: wrap;
         }
 
-        .item {
-            width: 50%;
-            box-sizing: border-box;
-            padding: 12px;
-        }
+        .item {width: 50%; float: left; box-sizing: border-box; padding: 12px;}
 
         .item img {
             width: 100%;
         }
 
-        .item p:last-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-size: 14px;
-        }
+        .item p:last-child {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px;}
 
-        @media screen and (min-width:768px) {
-            .item {
-                width: 33.33%;
-            }
-        }
 
+        @media screen and (min-width:600px) {
+            .item-wrapper {max-width: 600px;}
+            .item {width: 33.33%;}
+        }
         @media screen and (min-width:1200px) {
-            .item {
-                width: 25%;
-            }
+            .item {width: 25%;}
         }
     </style>
 </head>

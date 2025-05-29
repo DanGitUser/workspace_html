@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="click">Click</button>
+    <input><button class="change">Change</button><button class="naver">Naver</button>
+    <button onclick="history.back">Back</button>
+    <button onclick="history.forward">forward</button>
+    <script>
+        let w = null;
+        document.querySelector(".click").addEventListener("click", e => {
+            const w = open("open_target.html", '', 'width=800, height=500');
+        });
+        document.querySelector(".change").addEventListener("click", e => {
+            if(w) {
+                w.document.querySelector("body").innerHTML += `<h1>${document.querySelector("input").value}</h1>`;
+                console.log(w);
+                
+            }
+        });
+        document.querySelector(".naver").addEventListener("click", e => {
+            location.href = "https://www.naver.com";
+            // location.reload();
+        });
+    </script>
+</body>
+</html>
