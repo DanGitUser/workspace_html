@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        input,
+        textarea,
+        select,
+        button,
+        table {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            font-size: 13px;
+            line-height: 1.2;
+            color: #666;
+            font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+            font-weight: 400;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .header {
+            position: relative;
+            z-index: 101;
+        }
+
+        .header_content {
+            margin-bottom: 50px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header_content .contents {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 6px 25px 5px;
+            background-color: #fff;
+        }
+
+        .header .contents {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        .header_content .contents h1 {
+            display: inline-flex;
+            align-items: flex-end;
+            height: 53px;
+            font-weight: 500;
+        }
+
+        .header_content .contents h1 a {
+            display: block;
+            float: left;
+            height: 100%;
+        }
+
+        .header_content .contents h1 a img {
+            display: block;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .header_content .contents h1 span {
+            font-weight: 300;
+            font-size: 16px;
+            color: #222;
+            letter-spacing: 0.313em;
+            line-height: 1.500em;
+        }
+
+        .header_content .contents .memberInfo_wrap {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        .header_content .contents .memberInfo_wrap li {
+            margin-left: 44px;
+            margin-top: 2px;
+            word-break: break-all;
+        }
+
+        .header_content .contents .memberInfo_wrap li a {
+            display: block;
+            position: relative;
+            padding-bottom: 19px;
+        }
+
+        .header_content .contents .memberInfo_wrap li a img {
+            width: 36px;
+            height: 36px;
+        }
+
+        .header_content .contents .memberInfo_wrap li a span {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.462em;
+            white-space: nowrap;
+            transform: translate(-50%, 0);
+        }
+
+        .nav {
+            left: 0px;
+            position: absolute;
+            left: 0;
+            top: 113px;
+            width: 100%;
+            padding: 5px 0;
+            background-color: #fff;
+        }
+
+        .nav_menu {
+            display: inline-flex;
+        }
+
+        input,
+        select,
+        img {
+            vertical-align: middle;
+        }
+
+        #cgvwrap {
+            position: relative;
+            width: 100%;
+            min-width: 1040px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cgvwrap">
+        <div class="header">
+            <div class="header_content">
+                <div class="contents">
+                    <h1>
+                        <a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/logo/logoRed.png" alt="CGV" /></a><span>DEEP DIVE SPACE</span>
+                    </h1>
+                    <ul class="memberInfo_wrap">
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
+                                    alt="로그인" /><span>로그인</span></a></li>
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
+                                    alt="회원가입" /><span>회원가입</span></a></li>
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
+                                    alt="MY CGV" /><span>MY CGV</span></a></li>
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png"
+                                    alt="고객센터" /><span>고객센터</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="contents">
+                    <ul class="nav_menu">
+                        <li>
+                            <h2><a href="/movies/?lt=1&ft=0">영화</a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="/theaters/">극장</a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="/ticket/"><strong>예매</strong></a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="/culture-event/popcorn-store/">스토어</a></h2>
+                        </li>
+                        <li>
+                            <h2 onclick="gaEventLog('PC_GNB','주메뉴_이벤트','')"><a
+                                    href="/culture-event/event/defaultNew.aspx">이벤트</a></h2>
+                        </li>
+                        <li>
+                            <h2 onclick="gaEventLog('PC_GNB','주메뉴_해택','')"><a href="/discount/discountlist.aspx">혜택</a>
+                            </h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

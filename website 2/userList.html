@@ -8,16 +8,86 @@
 </head>
 
 <body>
+    
     <ul id="userList">
-
     </ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
     <script>
+        // 20세 이상인 유저만 <li>로 만들어 #userList에 출력하세요.
+        // 출력 예: <li>영희 (22세)</li>, <li>민수 (35세)</li> 
         const users = [
             { name: "철수", age: 17 },
             { name: "영희", age: 22 },
             { name: "민수", age: 35 },
             { name: "지우", age: 15 },
         ];
+
+        const twenty = users.filter(user => user.age >= 20);
+        const userList1 = document.querySelector("ul");
+        const userList2 = document.querySelectorAll("ul");
+
+        console.log(twenty);
+        // document.write(twenty.map(user => `<li>${user.name}(${user.age}세)</li>`).join("")); // no padding, straight print
+        userList1.innerHTML = twenty.map(user => `<li>${user.name} (${user.age}세)</li>`).join("");
+        userList2.forEach(e => {
+            e.innerHTML = twenty.map(user => `<li>${user.name} (${user.age}세)</li>`).join("");
+        });
+    </script>
+
+    <!-- HTML 참고 구조 -->
+    <p id="totalPrice"></p>
+
+    <script>
+        const cart = [
+            { name: "노트북", price: 1200000, qty: 1 },
+            { name: "키보드", price: 150000, qty: 2 },
+            { name: "마우스", price: 50000, qty: 3 },
+        ];
+
+        const sum = cart.reduce((a, b) => a + b.price * b.qty, 0);
+        const content = document.querySelector("#totalPrice");
+        content.innerHTML = `₩${sum}원`;
+        console.log(`₩${sum}`);
+
+        // reduce()를 사용하여 총합 가격을 계산하고 #totalPrice에 ₩합계원 형식으로 출력하세요.
+    </script>
+
+    <!-- HTML 참고 구조 -->
+    <input type="checkbox" id="checkAll"> 전체 동의 (id="checkAllBox")
+    <div>
+        <input type="checkbox" class="terms"> 이용약관 동의 (id="checkAll")
+        <input type="checkbox" class="terms"> 개인정보 수집 동의 (id="checkAll")
+    </div>
+
+    <script>
+        // #checkAll을 클릭하면 .terms 모든 체크박스도 체크되거나 해제되도록 하세요.
+        // const check2 = document.getElementById(".terms");
+        const checkAllBox = document.getElementById("checkAll");
+        const boxes = document.querySelectorAll(".terms");
+
+        checkAllBox.addEventListener("click", function () {
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].checked = checkAllBox.checked;
+            }
+        });
+
+        // .terms 중 하나라도 체크가 해제되면 #checkAll도 자동으로 해제되도록 하세요.
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].addEventListener("click", function () {
+                let allCheck = true;
+                for (let j = 0; j < boxes.length; j++) {
+                    if (!boxes[j].checked) {
+                        allCheck = false;
+                    }
+                }
+                checkAllBox.checked = allCheck;
+            }
+        )};
+
+        console.log("change");
     </script>
 </body>
 
