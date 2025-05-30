@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $("a").each(function() {
+                console.log($(this).attr("href"), this.href);
+                // $(this).attr("title", $(this).text());
+                // $(this).attr("title", this.innerText);
+                $(this).attr("title", $(this).html());
+
+                $(this).text("abcd").css("color", "red");
+            });
+
+            console.log($("div:eq(0)").text());
+            console.log($("div:eq(0)").html());
+
+            $("div:eq(1)").text("<p>hello</p>")
+            $("div:eq(2)").html("<p>hello</p>")
+            $("div:eq(2)").html(function() {
+                return "<mark>Additional Text</mark>"
+            });
+
+            $("div").html(function(i) {
+                return "<h2>" + i + "번째 div </h2>"
+            });
+        });
+    </script>
+</head>
+<body>   
+    <p><a href="https://www.naver.com">Naver</a></p>
+    <p><a href="https://www.google.com">Google</a></p>
+    <p><a href="https://www.daum.net">Daum</a></p>
+
+    <div>
+        <h1>안녕하세요, <span>hello</span></h1>
+    </div>
+
+    <div></div>
+    <div></div>
+</body>
+</html>

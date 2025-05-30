@@ -16,12 +16,38 @@
         }
     </style>
     <script>
+        // $(function() {
+        //     $("#m1 > p:contains('html')").css("border", "4px solid red");
+        //     $("#m1 > p:empty").css("border", "4px solid orange");
+        //     $("#m2 > span:parent").css("border", "4px solid yellow");
+        //     $("#m3 > section:has(article)").css("border", "4px solid green");
+        // })
         $(function() {
-            $("#m1 > p:contains('html')").css("border", "4px solid red");
-            $("#m1 > p:empty").css("border", "4px solid orange");
-            $("#m2 > span:parent").css("border", "4px solid yellow");
-            $("#m3 > section:has(article)").css("border", "4px solid green");
+            $("#m1")
+                .find("p:contains('html')").css({"border": "4px solid red"})
+            .end()
+                .find("p:empty").css({border: "4px solid orange"})
+            .end()
+            .next()
+                .find("> span:parent").css("border", function() {return"4px solid yellow"})
+            .end().css("color", "red")
+            .next()
+                .find("section:has(article)").css("border", () => "4px solid green");
+
+            $("div").each(function(i, j) {
+                // console.log(i, j);
+                // console.log(j, $(j).is("#m1")); 
+                // is() asks if it meets the condition
+                console.log($(this).find("> *").css("border-color"));
+                
+            });
+            const obj = ['red', 'green','blue'];
+            $.each(obj, function(i, j) {
+                console.log(i, j);
+                
+            })
         })
+
     </script>
 </head>
 <body>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $("input:text").css("background", "red");
+            $("input:password").css("background", "orange");
+            $(":button").css("background", "yellow");
+            $("input:checked + label").css("background", "green");
+            $("option:selected").css("background", "blue");
+            $("textarea:disabled").css("background", "pink");
+
+            console.log($("div").find(function() {
+                return "label";
+            }).text());
+
+            $("div:eq(0)")
+                .add("div:eq(0)").css("border", "1px solid")
+            .end().css("background", "gray");
+        })
+    </script>
+</head>
+<body>
+    <div><input type=""></div>
+    <div><input type="text"></div>
+    <div><input type="password"></div>
+    <div><button>Check</button></div>
+    <div><input type="checkbox" name="css" id="css" checked><label for="css">css</label></div>
+    <div>
+        <select>
+            <option>Subject Selections</option>
+            <option>javascript</option>
+            <option selected>jQuery</option>
+        </select>
+        <textarea cols="20" rows="5" disabled>javascript</textarea>
+    </div>
+</body>
+</html>

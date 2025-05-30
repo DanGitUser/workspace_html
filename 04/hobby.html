@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#all").change(function () {
+                console.log($(this).prop("checked"));
+                $(":checkbox").prop("checked", $(this).prop("checked"));
+                // $("checked").prop(":checkbox", $(this).prop(":checkbox"));
+            });
+            $("form").submit(function () {
+                event.preventDefault();
+                const hobbys = [];
+                $("[name=hobby]").filter(":checked").each(function() {
+                    hobbys.push(this.value)
+                }).parent().css("color", "red");
+                console.log(hobbys, $("[name=hobby]").filter(":checked").length);               
+            })
+            $(":checkbox:not(#all)").change(function () {
+                const total = $(":checkbox:not(#all)").length;
+                const checked = $(":checkbox:not(#all):checked").length;
+
+                $("#all").prop("checked", total === checked);
+                // let flag = false;
+                // $(":checkbox:not(#all)").each(function() {   
+                //     if ($(this).prop("checked")) {
+                //         $("#all").prop("checked", true);
+                //         console.log(this);
+                //         flag = true;
+                //         return true;
+                //     } else {
+                //         $("#all").prop("checked", false);
+                //         console.log(this);
+                //         flag = false;
+                //         return false;
+                //     }           
+                //     console.log($(this).val());
+                // });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Hobbies</legend>
+            <p><label>Select All <input type="checkbox" id="all"></label></p>
+            <hr>
+            <p><label>Climbing <input type="checkbox" name="hobby" value="climb"></label></p>
+            <p><label>Drinking <input type="checkbox" name="hobby" value="drink"></label></p>
+            <p><label>Reading <input type="checkbox" name="hobby" value="read"></label></p>
+            <p><label>Surfing <input type="checkbox" name="hobby" value="surfing"></label></p>
+            <p><label>Gaming <input type="checkbox" name="hobby" value="game"></label></p>
+            <p><label>Cooking <input type="checkbox" name="hobby" value="cook"></label></p>
+            <p><label>Camping <input type="checkbox" name="hobby" value="camp"></label></p>
+        </fieldset>
+        <button>Send</button>
+    </form>
+</body>
+</html>

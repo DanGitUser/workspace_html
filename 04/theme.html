@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {margin: 0; background: #ddd;}
+        ul {margin: 0; padding: 0; background: #678;}
+        ul li {display: inline;}
+        ul li a {
+            text-decoration: none; display: inline-block; 
+            width: 100px; padding: 16px; text-align: center;
+            color: #eee;
+        }
+        ul li a:hover {background-color: #789;}
+
+        body.dark {background-color: #345;}
+        .dark ul {background: #456;}
+        .dark ul li a {color: #ddd;}
+        .dark ul li a:hover {background: #567;}
+
+        button {
+            float: right;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(() => {
+            $("button").click(() => {
+                // $("body").toggleClass("dark");
+                $("body").is(".dark") ? 
+                $("body").removeClass("dark").find("button").text('dark mode') : 
+                $("body").addClass("dark").find("button").text('light mode')
+            })
+        })
+    </script>
+
+</head>
+<body class="">
+    
+    <nav>
+        <ul>
+            <li><a href="#">Menu1</a></li>
+            <li><a href="#">Menu2</a></li>
+            <li><a href="#">Menu3</a></li>
+            <li><a href="#">Menu4</a></li>
+            <button>dark mode</button>
+        </ul>
+        
+    </nav>
+</body>
+</html>
