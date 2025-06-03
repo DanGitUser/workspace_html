@@ -1,40 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>You are my universe</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
-        body {margin: 0}
-        h1 {color: #222;}
+        body {
+            margin: 0
+        }
+
+        h1 {
+            color: #222;
+        }
     </style>
     <!-- <script>
         // alert("Hello!")
     </script> -->
 </head>
+</head>
+
 <body>
-    <!-- line shift : alt + arrow keys -->
-     <!-- line copy : alt + shift -->
-      <!-- cursor length increase : alt + ctrl + arrow keys -->
-       <!-- ctrl + x : line cut -->
-        <!-- ctrl + ` : terminal -->
-    <h1>The Long Road</h1>
-    <h2>the lonely road</h2>
-    <!-- title attribute allows you to see what the thang is when you hover yer mouse over it -->
-    <p title = 'Title'>Main Body <strong>emphasis</strong></p>
-    <p title = 'Body'>
-        The road to redemption is long and often ends in failiure. <br>
-        It makes one wonder, if there is a point to achieve redemtion, if it's not guaranteed. <br>
-        There is nothing more terriying than coming to realization that you have no hope, no redemption. <br>
-        Far too many had to go down that path, far too little succeeded in the end. <br>
-        However, the majority makes no attempt to walk the path.
-    </p>
-    <input> 
-    <!-- input can be 'disabled' -->
-    <img src="https://www.snexplores.org/wp-content/uploads/2020/04/1030_LL_trees-1028x579.png" alt="sussy">
-    <br>
+    <div id="app-wrap">
+        <header class="header pos-rel z-101">
+            <div class="header-inner container flex flex-between">
+                <h1 class="logo">
+                    <a href="#" class="logo-link">
+                        <img src="https://img.cgv.co.kr/R2014/images/common/logo/logoRed.png" alt="CGV"
+                            class="logo-img" />
+                    </a>
+                    <span class="logo-subtitle">DEEP DIVE SPACE</span>
+                </h1>
+                <ul class="memberInfo_wrap">
+                    <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
+                                alt="로그인" /><span>로그인</span></a></li>
+                    <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
+                                alt="회원가입" /><span>회원가입</span></a></li>
+                    <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
+                                alt="MY CGV" /><span>MY CGV</span></a></li>
+                    <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png"
+                                alt="고객센터" /><span>고객센터</span></a></li>
+                </ul>
+            </div>
+            <nav class="nav">
+                <div class="container pos-rel">
+                    <ul class="nav-menu">
+                        <li class="nav-menu-item">
+                            <h2><a href="#">영화</a></h2>
+                        </li>
+                        <li class="nav-menu-item">
+                            <h2><a href="#">극장</a></h2>
+                        </li>
+                        <li class="nav-menu-item">
+                            <h2><a href="#"><strong>예매</strong></a></h2>
+                        </li>
+                        <li class="nav-menu-item">
+                            <h2><a href="#">스토어</a></h2>
+                        </li>
+                        <li class="nav-menu-item">
+                            <h2><a href="#">이벤트</a></h2>
+                        </li>
+                        <li class="nav-menu-item">
+                            <h2><a href="#">혜택</a></h2>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="movie-section">
+                <div class="container full-height">
+                    <div class="video-wrapper">
+                        <video autoplay muted>
+                            <source src="https://adimg.cgv.co.kr/images/202505/Miyazaki/Miyazaki_1080x608_PC.mp4"
+                                type="video/mp4">
+                        </video>
+                        <strong class="video-wrapper-title">미야자키 하야오: 자연의 영혼</strong>
+                        <span class="video-wrapper-subtitle">50년 넘는 세월 애니메이션의 마법으로<br>우리를 놀라게 한 거장의 위대한 여정</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer></footer>
+    </div>
 </body>
+
 </html>
 
 <!-- What are we? If we are not man, nor machine, then what are we?
