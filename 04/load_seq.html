@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,19 +16,38 @@
         }
         $(document).ready(function () {
             console.log("ready1");
-            
+
         })
         $().ready(function () {
             console.log("ready2");
-            
+
         })
         $(function () {
             console.log("ready3");
-            
+
         })
         $(() => console.log("ready4"));
-        </script>
+    </script>
+
+    <style>
+        .main-video span {
+            overflow: hidden;
+            position: absolute;
+            top: 239px;
+            left: 0;
+            max-width: 100%;
+            font-size: 20px;
+            color: #fff;
+            line-height: 1.450em;
+            text-overflow: ellipsis;
+            z-index: 3;
+            -webkit-box-orient: vertical;
+            animation: tt2 1s 3s ease-in forwards;
+            pointer-events: none;
+        }
+    </style>
 </head>
+
 <body>
     <script>
         console.log(2, document.body, document.querySelector("h2"));
@@ -42,10 +62,11 @@
             console.log(2.5, document.body, document.querySelector("h2"));
         }
     </script>
-</head>
+    </head>
     <h2>Word</h2>
     <script>
         console.log(3, document.body, document.querySelector("h2"));
     </script>
 </body>
+
 </html>

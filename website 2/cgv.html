@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* === Base === */
+        html, body, input, textarea,  select, button, table {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            font-size: 13px;
+            line-height: 1.2;
+            color: #666;
+            font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+            font-weight: 400;
+        }
+
+        html,  body {
+            height: 100%;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img, input, select {
+            vertical-align: middle;
+        }
+
+        /* === Layout === */
+        #cgvwrap {
+            position: relative;
+            width: 100%;
+            min-width: 1040px;
+        }
+
+        /* === Header === */
+        header {
+            position: relative;
+            z-index: 200;
+            background-color: #fff;
+        }
+
+        header .contents {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        /* === Header Content === */
+        .header-content {
+            margin-bottom: 32px;
+            border-bottom: 1px solid #eee;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="cgvwrap">
+        <header>
+            <div class="header-content">
+                <div class="contents">
+                    <h1>
+                        <a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/logo/logoRed.png" alt="CGV" /></a><span>DEEP DIVE SPACE</span>
+                    </h1>
+                    <ul class="memberInfo_wrap">
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
+                                    alt="로그인" /><span>로그인</span></a></li>
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
+                                    alt="회원가입" /><span>회원가입</span></a></li>
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
+                                    alt="MY CGV" /><span>MY CGV</span></a></li>
+                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png"
+                                    alt="고객센터" /><span>고객센터</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav" style="left: 0px;">
+                <div class="contents">
+                    <ul class="nav_menu">
+                        <li>
+                            <h2><a href="#">영화</a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="#">극장</a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="#"><strong>예매</strong></a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="#">스토어</a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="#">이벤트</a></h2>
+                        </li>
+                        <li>
+                            <h2><a href="#">혜택</a>
+                            </h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTAINER -->
+        <main id="container">
+            <div id="movie-selection" class="movieSelection">
+                <div class="contents">
+                    <div class="main-video">  
+
+                        <video autoplay="" muted="">
+                            <source src="https://adimg.cgv.co.kr/images/202505/Miyazaki/Miyazaki_1080x608_PC.mp4" type="video/mp4">
+                        </video>   
+
+                        <strong>미야자키 하야오: 자연의 영혼</strong>
+                        <span>50년 넘는 세월 애니메이션의 마법으로<br>우리를 놀라게 한 거장의 위대한 여정</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>

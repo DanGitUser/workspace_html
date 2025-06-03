@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body,
-        input,
-        textarea,
-        select,
-        button,
-        table {
+        /* === 기본 === */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
             padding: 0;
             margin: 0;
-            border: 0;
+            height: 100%;
             font-size: 13px;
             line-height: 1.2;
             color: #666;
@@ -22,251 +22,291 @@
             font-weight: 400;
         }
 
-        html,
-        body {
+        ul, ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img, input, select {
+            vertical-align: middle;
+        }
+
+        input, textarea, select, button, table {
+            border: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+        }
+
+        /* === 유틸리티 클래스 === */
+        .container {
+            width: 980px;
+            margin-inline: auto;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-between {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .pos-rel {
+            position: relative;
+        }
+
+        .pos-abs {
+            position: absolute;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .full-height {
             height: 100%;
         }
 
-        .header {
-            position: relative;
+        .z-1 {
+            z-index: 1;
+        }
+
+        .z-2 {
+            z-index: 2;
+        }
+
+        .z-3 {
+            z-index: 3;
+        }
+
+        .z-101 {
             z-index: 101;
         }
 
-        .header .contents {
-            width: 980px;
-            margin: 0 auto;
+        /* === 배치 === */
+        #app-wrap {
+            min-width: 1040px;
+            position: relative;
+            width: 100%;
         }
 
-        .header-content {
-            margin-bottom: 50px;
+        /* === Header === */
+        .header {
             background-color: #fff;
+        }
+
+        .header-inner {
+            margin-bottom: 32px;
             border-bottom: 1px solid #eee;
-        }
-
-        .header-content .contents {
-            display: flex;
-            justify-content: space-between;
             padding: 30px 6px 25px 5px;
-            background-color: #fff;
         }
 
-        .header .contents {
-            /* width: 980px; */
-            margin: 0 auto;
-        }
-
-        .header-content .contents h1 {
+        .logo {
             display: inline-flex;
             align-items: flex-end;
             height: 53px;
             font-weight: 500;
         }
 
-        .header-content .contents h1 a {
+        .logo-link,
+        .logo-img {
             display: block;
-            float: left;
-            height: 100%;
-        }
-
-        .header-content .contents h1 a img {
-            display: block;
-            width: auto;
             height: 100%;
             object-fit: contain;
         }
 
-        .header-content .contents h1 span {
+        .logo-subtitle {
             font-weight: 300;
             font-size: 16px;
             color: #222;
             letter-spacing: 0.313em;
-            line-height: 1.500em;
+            line-height: 1.5em;
         }
 
-        .header-content .contents .memberInfo_wrap {
-            display: flex;
-            align-items: center;
-            list-style: none;
+        /* === Member Info === */
+        .member-list {
+            gap: 44px;
         }
 
-        .header-content .contents .memberInfo_wrap li {
-            margin-left: 44px;
-            margin-top: 2px;
-            word-break: break-all;
-        }
-
-        .header-content .contents .memberInfo_wrap li a {
+        .member-item-link {
             display: block;
             position: relative;
             padding-bottom: 19px;
         }
 
-        .header-content .contents .memberInfo_wrap li a img {
+        .member-item-img {
             width: 36px;
             height: 36px;
         }
 
-        .header-content .contents .memberInfo_wrap li a span {
+        .member-item-label {
             position: absolute;
             bottom: 0;
             left: 50%;
+            transform: translateX(-50%);
             font-size: 13px;
             color: #666;
             line-height: 1.462em;
             white-space: nowrap;
-            transform: translate(-50%, 0);
         }
-        
-        .nav:before {
+
+        /* === Navigation === */
+        .nav {
+            background-color: #fff;
+            top: 113px;
+            padding-top: 18px;
+        }
+
+        .nav::before {
             content: '';
             display: block;
-            bottom: 0;
-            width: 100%;
             height: 1px;
             background-color: #eee;
         }
-        .nav {
-            position: absolute;
-            top: 113px;
-            width: 100%;
-            padding: 5px 0;
-            background-color: #fff;
-        }
-        .nav:after {
+
+        .nav::after {
             content: '';
             display: block;
-            top: 49px;
-            width: 100%;
             height: 2px;
             background-color: #fb4357;
         }
 
-        .nav .contents {
-            position: relative;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .nav_menu {
-            display: inline-flex;
-            padding: 0;
-        }
-
-        .nav_menu > li {
-            width: 162px;
-            padding: 20px 0;
-        }
-
-        .nav_menu > li:first-child {
-            width: 137px;
-        }
-
-        .nav_menu > li > h2 {
-            position: absolute;
+        .nav-menu {
+            gap: 43px;
             top: 7px;
         }
 
-        .nav_menu > li:nth-child(2) > h2 {
-            left: 80px;
-        }
-        .nav_menu > li:nth-child(3) > h2 {
-            left: 160px;
-        }
-        .nav_menu > li:nth-child(4) > h2 {
-            left: 240px;
-        }
-        .nav_menu > li:nth-child(5) > h2 {
-            left: 335px;
-        }
-        .nav_menu > li:last-child > h2 {
-            left: 430px;
-        }
-
-        .nav_menu > li > h2 > a {
+        .nav-menu-item a {
             font-weight: 500;
             font-size: 16px;
             color: #222;
             line-height: 1.5em;
         }
-        .nav_menu > li > h2 > a strong {
+
+        .nav-menu-item a strong {
             font-weight: 700;
             color: #fb4357;
         }
 
-        a {
-            text-decoration: none;
+        /* === Movie Section === */
+        .movie-section {
+            height: 498px;
+            background-color: #000;
+            padding-top: 13px;
         }
 
-        input,
-        select,
-        img {
-            vertical-align: middle;
+        .video-wrapper {
+            overflow: hidden;
         }
 
-        #cgvwrap {
-            position: relative;
+        .video-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 50%, #000 100%);
+            z-index: 2;
+        }
+
+        .video-wrapper video {
             width: 100%;
-            min-width: 1040px;
+            height: 100%;
+            transform: scale(1.35);
+            z-index: 1;
+            position: relative;
+        }
+
+        .video-wrapper-title {
+            top: 170px;
+            left: 0;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.72);
+        }
+
+        .video-wrapper-subtitle {
+            top: 239px;
+            left: 0;
+            font-size: 20px;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
-    <div id="cgvwrap">
-        <div class="header">
-            <div class="header-content">
-                <div class="contents">
-                    <h1>
-                        <a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/logo/logoRed.png"
-                                alt="CGV" /></a><span>DEEP DIVE SPACE</span>
-                    </h1>
-                    <ul class="memberInfo_wrap">
-                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png"
-                                    alt="로그인" /><span>로그인</span></a></li>
-                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png"
-                                    alt="회원가입" /><span>회원가입</span></a></li>
-                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png"
-                                    alt="MY CGV" /><span>MY CGV</span></a></li>
-                        <li><a href="#"><img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png"
-                                    alt="고객센터" /><span>고객센터</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="nav" style="left: 0px;">
-                <div class="contents">
-                    <ul class="nav_menu">
-                        <li>
-                            <h2><a href="#">영화</a></h2>
-                        </li>
-                        <li>
-                            <h2><a href="#">극장</a></h2>
-                        </li>
-                        <li>
-                            <h2><a href="#"><strong>예매</strong></a></h2>
-                        </li>
-                        <li>
-                            <h2><a href="#">스토어</a></h2>
-                        </li>
-                        <li>
-                            <h2><a href="#">이벤트</a></h2>
-                        </li>
-                        <li>
-                            <h2><a href="#">혜택</a>
-                            </h2>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div id="app-wrap">
+    <header class="header pos-rel z-101">
+      <div class="header-inner container flex flex-between">
+        <h1 class="logo">
+          <a href="#" class="logo-link">
+            <img src="https://img.cgv.co.kr/R2014/images/common/logo/logoRed.png" alt="CGV" class="logo-img" />
+          </a>
+          <span class="logo-subtitle">DEEP DIVE SPACE</span>
+        </h1>
 
-        <!-- CONTAINER -->
-        <div class="mainbody-container">
+        <ul class="member-list flex">
+          <li><a href="#" class="member-item-link text-center">
+            <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png" alt="로그인" class="member-item-img">
+            <span class="member-item-label">로그인</span>
+          </a></li>
+          <li><a href="#" class="member-item-link text-center">
+            <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png" alt="회원가입" class="member-item-img">
+            <span class="member-item-label">회원가입</span>
+          </a></li>
+          <li><a href="#" class="member-item-link text-center">
+            <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png" alt="MY CGV" class="member-item-img">
+            <span class="member-item-label">MY CGV</span>
+          </a></li>
+          <li><a href="#" class="member-item-link text-center">
+            <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png" alt="고객센터" class="member-item-img">
+            <span class="member-item-label">고객센터</span>
+          </a></li>
+        </ul>
+      </div>
 
+      <nav class="nav pos-abs full-width">
+        <div class="container pos-rel">
+          <ul class="nav-menu flex nav-menu">
+            <li class="nav-menu-item"><h2><a href="#">영화</a></h2></li>
+            <li class="nav-menu-item"><h2><a href="#">극장</a></h2></li>
+            <li class="nav-menu-item"><h2><a href="#"><strong>예매</strong></a></h2></li>
+            <li class="nav-menu-item"><h2><a href="#">스토어</a></h2></li>
+            <li class="nav-menu-item"><h2><a href="#">이벤트</a></h2></li>
+            <li class="nav-menu-item"><h2><a href="#">혜택</a></h2></li>
+          </ul>
         </div>
-    </div>
-    </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="movie-section">
+        <div class="container full-height">
+          <div class="video-wrapper pos-rel full-height">
+            <video autoplay muted>
+              <source src="https://adimg.cgv.co.kr/images/202505/Miyazaki/Miyazaki_1080x608_PC.mp4" type="video/mp4">
+            </video>
+            <strong class="video-wrapper-title pos-abs z-2">미야자키 하야오: 자연의 영혼</strong>
+            <span class="video-wrapper-subtitle pos-abs z-3">50년 넘는 세월 애니메이션의 마법으로<br>우리를 놀라게 한 거장의 위대한 여정</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </div>
 </body>
 
 </html>

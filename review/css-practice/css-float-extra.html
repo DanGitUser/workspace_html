@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Float Exercises (6–9)</title>
+    <style>
+        /* === 공통 스타일 === */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            margin-top: 50px;
+            color: #333;
+        }
+
+        .box,
+        .float-box,
+        .float-child,
+        .clearfix-container div,
+        .inline-box1,
+        .inline-box2 {
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* === Exercise 6 === */
+        .float-box {
+            float: left;
+            width: 150px;
+            height: 150px;
+            background-color: coral;
+        }
+
+        .after-text {
+            /*  clear 속성을 사용하여 이 텍스트가 떠 있는 박스 아래에 나타나도록 하세요. */
+            /* 예: clear: both; */
+        }
+
+        /* === Exercise 7 === */
+        .box-a {
+            float: left;
+            width: 45%;
+            height: 100px;
+            background-color: teal;
+        }
+
+        .box-b {
+            float: right;
+            width: 45%;
+            height: 100px;
+            background-color: olive;
+        }
+
+        .box-c {
+            height: 100px;
+            background-color: navy;
+            /*  float된 A와 B 박스 아래에 나타나도록 clear 속성을 사용하세요. */
+            /* 예: clear: both; */
+        }
+
+        /* === Exercise 8 === */
+        .clearfix-container {
+            background-color: #eee;
+            margin-top: 30px;
+            padding: 10px;
+            /*  이 컨테이너가 float된 자식들을 포함하도록 clearfix를 적용하세요. */
+            /* 예: ::after 선택자를 이용한 clearfix 해법 */
+        }
+
+        .float-child {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            margin-right: 10px;
+        }
+
+        /* === Exercise 9 === */
+        .float-box1,
+        .float-box2 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin-right: 10px;
+        }
+
+        .inline-box1,
+        .inline-box2 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            margin-right: 10px;
+            /*  inline-block과 float이 어떻게 다르게 동작하는지 관찰해 보세요. */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Float 실습 문제 (Exercise 6–9)</h1>
+
+    <h2> Exercise 6: clear로 다음 요소 밀어내기</h2>
+    <div class="float-box">I'm floating!</div>
+    <p class="after-text">이 텍스트는 떠 있는 "I'm floating!" 박스 아래에 나타나야 합니다.</p>
+
+    <h2> Exercise 7: 두 개의 박스를 양쪽으로 배치하고, 아래에 박스 하나 추가</h2>
+    <div class="box box-a">A</div>
+    <div class="box box-b">B</div>
+    <div class="box box-c">C</div>
+
+    <h2> Exercise 8: 부모 요소가 자식 float 박스를 포함하지 않을 때</h2>
+    <div class="clearfix-container">
+        <div class="float-child">1</div>
+        <div class="float-child">2</div>
+    </div>
+
+    <h2> Exercise 9: float vs inline-block 비교</h2>
+    <div class="float-box1">Float 1</div>
+    <div class="float-box2">Float 2</div>
+    <div style="clear: both;"></div> <!-- 레이아웃 정리용 -->
+    <br>
+    <div class="inline-box1">Inline 1</div>
+    <div class="inline-box2">Inline 2</div>
+
+</body>
+
+</html>
