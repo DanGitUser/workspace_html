@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        h1 { padding: 30px; margin: 30px 0; border: 1px solid;}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("button:eq(0)").click(function () {
+                console.log($(this).text());
+                // $("<h1>Elemented Added <span>1</span></h1>").appendTo("body");
+                // $("body").html(function (i, cur) {
+                //     return cur + "<h1>Elemented Added <span>1</span></h1>"
+                // });
+                $("<h1>Elemented Added</h1>").append(function () {
+                    return $("<span>").html($("h1").length + 1);
+                }).appendTo("body");
+            });
+            $("button:eq(1)").click(function () {
+                console.log($(this).text());
+                $("h1").remove("h1:last");
+            });
+            $("button:eq(2)").click(function () {
+                console.log($(this).text()); 
+                $("div").empty();
+            });
+            $("button:eq(3)").click(function () {
+                console.log($(this).text());
+                $("div").append("<button>Add</button><button>Remove Last</button><button>Remove All</button>");
+                $("<h1>Elemented Added</h1>").append(function () {
+                    return $("<span>").html($("h1").length + 1);
+                }).appendTo("body");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button>Add</button>
+        <button>Remove Last</button>
+        <button>Remove All</button>
+        <!-- <h1>Elemented Added <span>1</span></h1> -->
+    </div>
+    <button>Restore All</button>
+</body>
+</html>

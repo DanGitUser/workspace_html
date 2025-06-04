@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 { width: 300px; background: orange;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $("div:eq(0) button:eq(0)").click(function() {
+                $("h1:eq(0)").show(3000);
+            })
+            $("div:eq(0) button:eq(1)").click(function() {
+                $("h1:eq(0)").hide("fast", function() {
+                    console.log("hide done!");            
+                });
+            })
+            $("div:eq(0) button:eq(2)").click(function() {
+                $("h1:eq(0)").toggle();
+            });
+
+            //
+            $("div:eq(1) button:eq(0)").click(function() {
+                $("h1:eq(1)").slideDown(1000);
+            })
+            $("div:eq(1) button:eq(1)").click(function() {
+                $("h1:eq(1)").slideUp(1000, function() {
+                    console.log("hide done!");            
+                });
+            })
+            $("div:eq(1) button:eq(2)").click(function() {
+                $("h1:eq(1)").slideToggle();
+            });
+
+            //
+            $("div:eq(2) button:eq(0)").click(function() {
+                $("h1:eq(2)").fadeIn(1000);
+            })
+            $("div:eq(2) button:eq(1)").click(function() {
+                $("h1:eq(2)").fadeOut(1000, function() {
+                    console.log("hide done!");            
+                });
+            })
+            $("div:eq(2) button:eq(2)").click(function() {
+                $("h1:eq(2)").fadeToggle(1000);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <button>show</button><button>hide</button><button>toggle</button>
+        <h1>첫번쩨 Element</h1>
+    </div>
+    <div>
+        <button>slidedown</button><button>slideup</button><button>slidetoggle</button>
+        <h1>두번제 Element</h1>
+    </div>
+    <div>
+        <button>fadein</button><button>fadeout</button><button>fadetoggle</button>
+        <h1>세번제 Element</h1>
+    </div>
+</body>
+
+</html>

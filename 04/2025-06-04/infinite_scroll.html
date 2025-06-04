@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        h1 {
+            border: 1px solid;
+            padding: 30px;
+            margin: 30px 0;
+        }
+    </style>
+    <script>
+        // Glitch
+
+
+        // let page = 1;
+        // $(window).scroll(function () {
+        //     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+        //         console.log(page++);
+        //     }
+        // });
+        // $(window).scroll(function () {
+        //     if ($(document).height() == $(window).scrollTop() + $(window).height()) {
+        //         console.log(page++);
+        //     }
+        // });
+        let isLoading = false;
+
+        function loadMoreContent() {
+            if (isLoading) return;
+            isLoading = true;
+
+            if ($("body h1").length < 100) {
+                $("h1").css("opacity", "0.3");
+                setTimeout(() => {
+                    $("body h1").clone(true).each(function (i) {
+                        const idx = $("body h1").length + i + 1;
+                        $(this).find("span").text(idx);
+                    }).appendTo("body");
+                    isLoading = false;
+                    $("h1").css("opacity", "1");
+                }, 1000)
+            } else {
+                isLoading = false;
+            }
+        }
+
+
+        $(function () {
+            $("h1").click(function () {
+                console.log($(this).text());
+            })
+            $(window).scroll(function () {
+                // console.log($(this).scrollTop());
+                // console.log($(this).scrollTop()) + $(this).height() + 100 >= $(document).height();
+                // console.log("scroll height " + $(document).height() == $(window).scrollTop() + $(window).height());
+                // console.log("doc height " + $(document).height());
+                // console.log("win height " + $(window).height());    
+                if ($(this).scrollTop() + $(this).height() + 100 >= $(document).height()) {
+                    loadMoreContent();
+                }
+            })
+            $("button").click(function () {
+                console.log("doc height " + $(document).height());
+                console.log("win height " + $(window).height());
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <button>Document Height Calculation</button>
+    <h1>element <span>1</span></h1>
+    <h1>element <span>2</span></h1>
+    <h1>element <span>3</span></h1>
+    <h1>element <span>4</span></h1>
+    <h1>element <span>5</span></h1>
+    <h1>element <span>6</span></h1>
+    <h1>element <span>7</span></h1>
+    <h1>element <span>8</span></h1>
+    <h1>element <span>9</span></h1>
+    <h1>element <span>10</span></h1>
+</body>
+
+</html>

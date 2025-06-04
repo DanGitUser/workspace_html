@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("<h1>This was Added</h1>").appendTo("body");
+            $("button").click(function () {
+                $("<h1>This was Added by Button</h1>").appendTo("body");
+                // $("h1").click(function () {console.log($(this).text());})
+            });
+            // $("h1").click(function () {console.log($(this).text());})
+            const f = function () {
+                console.log(event.type);    
+            };
+            $("button").on("click dblclick", f);            
+            $("button").off("click", f);
+            $("body").on("click", "h1", function () {
+                console.log($(this).text());
+            });
+
+            // $("h3").on("click", function () {
+            //     console.log($(this).text());
+            //     $(this).off("click");
+            // });
+            $("h3").one("click", function () {
+                console.log($(this).text());
+            });
+        })
+    </script>
+</head>
+<body>
+    <button>Add</button>
+    <h1>This Existed</h1>
+    <h3>I am h3</h3>
+</body>
+</html>
