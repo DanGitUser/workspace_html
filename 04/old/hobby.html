@@ -26,21 +26,6 @@
                 const checked = $(":checkbox:not(#all):checked").length;
 
                 $("#all").prop("checked", total === checked);
-                // let flag = false;
-                // $(":checkbox:not(#all)").each(function() {   
-                //     if ($(this).prop("checked")) {
-                //         $("#all").prop("checked", true);
-                //         console.log(this);
-                //         flag = true;
-                //         return true;
-                //     } else {
-                //         $("#all").prop("checked", false);
-                //         console.log(this);
-                //         flag = false;
-                //         return false;
-                //     }           
-                //     console.log($(this).val());
-                // });
             });
         });
     </script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+        li { list-style: none;}
+        h3 {border: 1px solid #c5c5c5; background: #f6f6f6; font-weight: normal; color: #454545;}
+    </style>
+    <script>
+        $(() => $( "#sortable" ).sortable());
+        $(function() {$( "#accordion" ).accordion();});
+        $(setInterval(function() {$("#moment").text(moment().format('(YYYY/MM/DD) h:mm:ss a'))}), 1000);
+    </script>
+</head>
+<body>
+    <header>
+        <div id="moment">
+            <span>time</span>
+        </div>
+    </header>
+    <main>
+        <ul id="sortable">
+            <h2>To Do List</h2>
+            <li><input type="checkbox"><span>: 장보기</span></li>
+            <li><input type="checkbox"><span>: 화장실 청소</span></li>
+            <li><input type="checkbox"><span>: 월세 내기</span></li>
+            <li><input type="checkbox"><span>: 김치 담그기</span></li>
+            <li><input type="checkbox"><span>: 치과 가기</span></li>
+        </ul>
+        <hr>
+        <div id="accordion">
+            <h3>Test1</h3>
+            <div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+            <h3>Test1</h3>
+            <div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+            <h3>Test1</h3>
+            <div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
