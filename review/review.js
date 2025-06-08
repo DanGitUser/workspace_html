@@ -96,3 +96,12 @@ c.increment(); // 1
 c.increment(); // 2
 // console.log(count);
 console.log(c.getCount()); // 2
+
+const output = void 101010;
+console.log(output);
+
+void function() {
+  console.log("bam");
+}();
+
+('a')('.a')
