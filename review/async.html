@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Async Closure Example</title>
+</head>
+
+<body>
+    <h1>Async Closures with setTimeout</h1>
+
+    <h2>Bad Version (using var)</h2>
+    <pre id="bad-output"></pre>
+
+    <h2>Good Version (using let)</h2>
+    <pre id="good-output"></pre>
+
+    <script>
+        const badOutput = document.getElementById("bad-output");
+        const goodOutput = document.getElementById("good-output");
+
+        // Bad:
+        for (var i = 1; i <= 3; i++) {
+            setTimeout(function () {
+                badOutput.textContent += `var i = ${i}\n`;
+            }, i * 1000);
+        }
+
+        // Good:
+        for (let i = 1; i <= 3; i++) {
+            setTimeout(function () {
+                goodOutput.textContent += `let i = ${i}\n`;
+            }, i * 1000);
+        }
+    </script>
+</body>
+
+</html>

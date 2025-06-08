@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- style -->
+    <style>
+        body { margin: 0; padding: 0; font-family: arial; height: 3000px; background-color: #ddd;}
+        ul li a {list-style: none; text-decoration: none; color: #000;}
+        a { color: inherit; text-decoration: none; outline: none;}
+
+        /* header / nav */
+        .header { position: fixed; width: 1920px; height: 64px; background-color: #fff; z-index: 100; }
+        .inner { max-width: 1200px; min-width: 1230px; margin: 0 auto; }
+        .header .inner { position: static; display: flex; max-width: 1920px; min-width: 768px; width: 100%; height: 100%; padding: 0 104px 0 98px; box-sizing: border-box; }
+        .header > div > h1 { display: flex; vertical-align: center; align-items: center; box-sizing: content-box; }
+        .header > div > h1 > a { text-decoration: none; color: #000; }
+        .header > div > h1 > a > span { display: block; width: 203px; height: 20px; background-size: 203px 20px; background-image: url(https://recruit.snowcorp.com/share/tmplat/snow/img/logo_snow.svg); }
+
+        .header .gnb { display: flex; align-items: stretch; flex-direction: row; padding: 0; }
+        .header .gnb-list { display: flex; vertical-align: center; }
+
+        .header .gnb-left { display: flex; align-items: stretch; margin-left: 29px; padding: 0; }
+        .header .gnb-left ul li a { display: block; padding: 0 10px; font-size: 17px; line-height: 35px; }
+        .header .gnb-left ul li a:hover { text-decoration: underline; }
+
+        .header .gnb-right { display: flex; margin-left: auto; }
+        .header .gnb-right ul li a { display: block; padding: 0 10px; font-size: 17px; line-height: 35px; }
+        .header .gnb-right ul li a:hover { text-decoration: underline; }
+
+        /* main */
+        main { padding-top: 60px; }
+        main > div:first-child > video { width: 100%; height: 544px; object-fit: cover; } 
+
+        main > section:nth-of-type(1) { padding: 80px 0; background-color: #fff; } 
+        main > section .inner > div { position: relative; text-align: center; } 
+        main > section .inner > div > h3 { font-size: 28px; line-height: 32px; font-weight: bold; color: #000; } 
+        main > section .inner > div > a { display: block; margin: 33px auto 0 auto; width: 300px; height: 84px; padding: 22px 30px; border-radius: 150px; background: #0cf; box-sizing: border-box;} 
+        main > section .inner > div > a > span { font-size: 30px; line-height: 40px; font-weight: normal; color: #fff;}
+
+        main > section:nth-of-type(2) > div { padding-bottom: 89px; background-color: #fafafa; color: #000 } 
+        main > section:nth-of-type(2) > div .inner > div > h3 { text-align: left; font-size: 64px; line-height: 71px; margin-bottom: 20px; font-weight: 500;}  
+        main > section:nth-of-type(2) > div .inner > div > div { display: flex; align-items: flex-start; justify-content: space-between; }
+
+        main > section:nth-of-type(2) > div > div:nth-of-type(2) { margin-top: 70px; }
+        main > section:nth-of-type(2) > div > div:nth-of-type(2) ul { list-style: none; padding: 0;}
+        main > section:nth-of-type(2) > div > div:nth-of-type(2) ul > li { list-style: none; }
+        main > section:nth-of-type(2) > div > div:nth-of-type(2) ul > li > a { display: block; color: #000;}
+        main > section:nth-of-type(2) > div > div:nth-of-type(2) ul > li > a > div > dl { display: flex; margin: 0; padding: 0; height: 100px; }
+        main > section:nth-of-type(2) > div > div:nth-of-type(2) ul > li > a > div > dl > * { width: 100%;}
+        main > section:nth-of-type(2) > div > div:nth-of-type(2) ul > li > a > div > dl > dt { }
+       
+    </style>
+    <!-- script -->
+    <script>
+
+    </script>
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="inner">
+            <h1>
+                <a href=""><span></span></a>
+            </h1>
+            <nav class="gnb-left">
+                <ul class="gnb">
+                    <li class="gnb-list"><a href="">Teams</a></li>
+                    <li class="gnb-list"><a href="">People</a></li>
+                    <li class="gnb-list"><a href="">Benefits</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb-right">
+                <ul class="gnb">
+                    <li class="gnb-list"><a href="">Jobs</a></li>
+                    <li class="gnb-list"><a href="">Login</a></li>
+                    <li class="gnb-list"><a href="">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main>
+        <div>
+            <video autoplay="" muted="" playsinline="" loop="">
+                <source src="https://recruit.pstatic.net/cdn-vod/snow/SNOW_careers.mp4" type="video/mp4">
+            </video>
+        </div>
+        <section>
+            <div class="inner">
+                <div>
+                    <h3>스노우와 함께할 인재를 기다립니다.</h3>
+                    <a href=""><span>View Careers</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <div class="inner">
+                    <div>
+                        <h3>Teams</h3>
+                        <div>
+                            <p>서로 다른 사람들이 모여 한 방향으로 나아갑니다.</p>
+                            <a href="#" class="more_type">More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="inner">
+                                    <dl>
+                                        <dt>
+                                            <span>Tech</span>                                    
+                                        </dt>
+                                        <dd>글로벌 No.1 혁신 서비스를 만듭니다</dd>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="inner">
+                                    <dl>
+                                        <dt>
+                                            <span>Design</span>
+                                        </dt>
+                                        <dd>새로운 사용자 경험을 디자인합니다</dd>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="inner">
+                                    <dl>
+                                        <dt>
+                                            <span>Service &amp; Business</span>
+                                        </dt>
+                                        <dd>일상을 재미있고 편리하게 소통할 수 있게 합니다</dd>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="inner">
+                                    <dl>
+                                        <dt>
+                                            <span>Corporate</span>
+                                        </dt>
+                                        <dd>서비스도, 사람도 '지속가능한 성장'을 할 수 있도록 지원합니다</dd>
+                                    </dl>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h2>Bad Version (using var)</h2>
+    <div id="bad-buttons"></div>
+
+    <h2>Good Version (using let)</h2>
+    <div id="good-buttons"></div>
+    <script>
+        // Bad:
+        for (var i = 0; i < 3; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = `Bad Button ${i}`;
+            btn.style.margin = "5px";
+
+            btn.addEventListener("click", function () {
+                alert(`You clicked bad button ${i}`);
+            });
+            document.getElementById("bad-buttons").appendChild(btn);
+        }
+
+        // Good
+        for (let i = 0; i < 3; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = `Good Button ${i}`;
+            btn.style.margin = "5px";
+
+            btn.addEventListener("click", function () {
+                alert(`You clicked good button ${i}`);
+            });
+            document.getElementById("good-buttons").appendChild(btn);
+        }
+    </script>
+</body>
+
+</html>

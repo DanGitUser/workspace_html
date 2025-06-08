@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JS vs jQuery 문제 연습</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .active {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1 id="main-title">프론트엔드 테스트</h1>
+
+    <button id="btn-toggle">토글 제목</button>
+    <button id="btn-add">리스트 추가</button>
+
+    <ul id="todo-list">
+        <li>공부하기</li>
+        <li>운동하기</li>
+    </ul>
+
+    <input type="text" id="new-item" placeholder="할 일 입력" />
+
+    <div id="box" style="width: 100px; height: 100px; background: blue;"></div>
+    <button id="resize-box">크기 늘리기</button>
+
+    <a id="nav-link" href="https://example.com">Go Link</a>
+
+    <hr>
+    <h2>정답 스크립트 입력 영역</h2>
+    <script>
+        /******************** JS 문제 1 ********************
+        #btn-toggle 버튼을 클릭하면 #main-title의 visibility를 토글하라.
+        (display가 아닌 visibility 사용)
+        ****************************************************/
+        const title = document.getElementById("main-title");
+        const btn = document.getElementById("btn-toggle");
+        btn.onclick = function () {
+            const visible = title.style.visibility;
+            title.style.visibility = (visible === "hidden") ? "visible" : "hidden";
+        };
+
+        /******************** JS 문제 2 ********************
+        input(#new-item)에 텍스트를 입력하고, #btn-add 클릭 시 
+        <ul id="todo-list">에 <li>요소로 추가하라.
+        ****************************************************/
+        const field = document.getElementById("new-item");
+        const btnAdd = document.getElementById("btn-add");
+        const tdl = document.getElementById("todo-list");
+        btnAdd.onclick = function () {
+            const input = field.value.trim();
+
+            if (input !== "") {
+                const li = document.createElement("li");
+                li.textContent = input;
+                tdl.appendChild(li);
+                field.value = "";
+            }
+        }
+
+        /******************** JS 문제 3 ********************
+        #todo-list 안의 <li> 항목을 클릭하면 해당 항목에 클래스 'active'를 토글하라.
+        ****************************************************/
+
+        /******************** JS 문제 4 ********************
+        #resize-box 버튼 클릭 시 #box의 width를 200px로 애니메이션처럼 부드럽게 변경하라.
+        (힌트: setInterval 사용)
+        ****************************************************/
+
+        /******************** JS 문제 5 ********************
+        #nav-link 클릭 시 이동을 막고, alert로 "차단됨" 출력하라.
+        ****************************************************/
+
+        /******************** jQuery 문제 1 ********************
+        #btn-toggle 버튼 클릭 시 #main-title을 fadeToggle() 하라.
+        ****************************************************/
+
+        /******************** jQuery 문제 2 ********************
+        #btn-add 클릭 시 input 값으로 li를 추가하라.
+        단, input이 빈 경우 alert("입력하세요") 출력
+        ****************************************************/
+
+        /******************** jQuery 문제 3 ********************
+        #todo-list의 li 클릭 시 this에 클래스 active를 toggle 하라.
+        ****************************************************/
+
+        /******************** jQuery 문제 4 ********************
+        #resize-box 클릭 시 #box의 배경색을 빨강으로 변경하고, 
+        1초 후 다시 파랑으로 복원하라.
+        ****************************************************/
+
+        /******************** jQuery 문제 5 ********************
+        #nav-link 클릭 시 기본 동작 차단 후 console.log("링크 클릭 차단")
+        ****************************************************/
+    </script>
+
+</body>
+
+</html>
