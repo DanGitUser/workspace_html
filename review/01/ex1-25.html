@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* :required {box-shadow: 0 0 2px 2px red;} */
+    </style>
+</head>
+<body>
+    <form>
+        ID : <input type="text" name="text" value="가나다라" maxlength="5">
+        PW : <input type="password" name="pw" required>
+        <hr>
+        Search : <input type="search" name="search">
+        Email : <input type="email" name="email">
+        Phone: <input type="tel" name="tel">
+        <hr>
+        Color : <input type="color" name="color">
+        Range : <input type="range" name="range" max="5" step="2">
+        Field : <input type="number" name="number" max="100" step="5">
+        <hr>
+        <input type="submit" value="SEND">
+    </form>
+
+    <form>
+        <h3>radio</h3>
+        <p>Region Selection</p>
+        <label>Seoul <input type="radio" name="area" value="Seoul"></label>
+        <label for="kk">Gyeongi</label><input type="radio" name="area" value="Gyeongi" id="kk">
+        <label>Incheon <input type="radio" name="area" value="Incheon" checked></label>
+        <hr>
+        <h3>checkbox</h3>
+        <p>Pizza Topping</p>
+        <label>All Toppings <input type="checkbox" name="topping" value="all" id="toppingAll"></label><br>
+        <label>Peperoni<input type="checkbox" name="topping" value="pp"></label><br>
+        <label>Potato<input type="checkbox" name="topping" value="pt" checked></label><br>
+        <label>Sweet Potato<input type="checkbox" name="topping" value="sp" checked></label>
+        <hr>
+        <input type="reset" value="reset">
+        <input type="button" name="button" value="button" onclick="alert(prompt ('insert name') + ', welcome user')">
+        <input type="image" src="images/bt.png" alt="search">
+        <hr>
+        <button><img src="images/bt.png" alt="search"></button>
+        <button>Send</button>
+    </form>
+    <script>
+        const all = document.querySelector('#toppingAll');
+        console.log(all);
+        all.addEventListener("change", e => {
+            // console.log(all.checked)
+            const toppings = document.querySelectorAll("[name='topping']");
+            for(let i = 0 ; i < toppings.length ; i++) {
+                toppings[i].checked = all.checked;
+            }
+            //  toppings.forEach(t => t.checked = all.checked);
+            // console.log(toppings.length);
+        });
+    </script>
+</body>
+</html>

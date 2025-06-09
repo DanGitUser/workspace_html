@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body > h3 {color: purple;}
+        li h3 {color: red;}
+        li:first-child h3 {text-decoration: underline;}
+        li li {color: green;}
+        /* body > * {text-decoration: line-through;} */
+        table, td {border: 1px solid black;}
+        td {padding: 1em; width: 100px;}
+        td + td {width: 200px;}
+        td + td + td {width: 150px;}
+    </style>
+</head>
+<body>
+    <h3>h3 title</h3>
+    <ul>
+        <li>title1
+            <h3>h3 title</h3>
+            <ul>
+                <li>sub1</li>
+                <li>sub2</li>
+                <li>sub3</li>
+            </ul>
+        </li>
+        <li>
+            <h3>h3 Title</h3>
+            <ul>
+                <li>sub1</li>
+                <li>sub2</li>
+                <li>sub3</li>
+            </ul>
+        </li>
+    </ul>
+    <table>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </table>
+    <table>
+        <td rowspan="5">1</td>
+        <!-- <td>2</td> -->
+    </table>
+</body>
+</html>

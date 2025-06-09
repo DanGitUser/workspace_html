@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gnb {list-style: none;}
+        .gnb a {text-decoration: none; color: #222;}
+        .gnb > li {display: inline-block; border: 1px solid #222; padding: 16px 48px;}
+        .gnb > li:hover {background: #ddd;}
+        /* .gnb > li ul {display: none;} */
+        .gnb > li ul {display: none; position: absolute; list-style: none; padding: 0; background-color: white;}
+        .gnb > li:hover ul, .gnb li > a:focus + ul {display: block;} 
+    </style>
+</head>
+<body>
+    <ul class="gnb">
+        <li>
+            <a href="#">Menu_1</a>
+            <ul>
+                <li><a href="#">menu_1a</a>:1</li>
+                <li><a href="#">menu_1b</a>:2</li>
+                <li><a href="#">menu_1c</a>:3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Menu_2</a>
+            <ul>
+                <li><a href="#">menu_2a</a>:1</li>
+                <li><a href="#">menu_2b</a>:2</li>
+                <li><a href="#">menu_2c</a>:3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Menu_3</a>
+            <ul>
+                <li><a href="#">menu_3a</a>:1</li>
+                <li><a href="#">menu_3b</a>:2</li>
+                <li><a href="#">menu_3c</a>:3</li>
+            </ul>
+        </li>
+    </ul>
+    <dl>
+        <dt>HI</dt>
+        <dd>there</dd>
+    </dl>
+</body>
+</html>
