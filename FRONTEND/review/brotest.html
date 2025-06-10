@@ -70,13 +70,13 @@
                 input.value = '';
             }
         });
-        
+
         /******************** JS 문제 3 ********************
         #todo-list 안의 <li> 항목을 클릭하면 해당 항목에 클래스 'active'를 토글하라.
         ****************************************************/
-        document.getElementById('todo-list').addEventListener('click', function(event) {
+        document.getElementById('todo-list').addEventListener('click', function (event) {
             if (event.target.tagName === 'LI') {
-                console.log(event.target.tagName === 'LI');               
+                console.log(event.target.tagName === 'LI');
                 event.target.classList.toggle('active');
             }
         });
@@ -86,6 +86,20 @@
         #resize-box 버튼 클릭 시 #box의 width를 200px로 애니메이션처럼 부드럽게 변경하라.
         (힌트: setInterval 사용)
         ****************************************************/
+        document.getElementById('resize-box').addEventListener('click', function () {
+            const element = document.getElementById("box");
+            let width = 0;
+            const id = setInterval(frame, 10);
+            function frame() {
+                if (width == 200) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    element.style.width = width + 'px';
+                }
+            }
+        });
+        setInterval(timer, 1000);
 
         /******************** JS 문제 5 ********************
         #nav-link 클릭 시 이동을 막고, alert로 "차단됨" 출력하라.

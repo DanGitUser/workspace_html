@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ToDo App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.min.css" integrity="sha512-i1b/nzkVo97VN5WbEtaPebBG8REvjWeqNclJ6AItj7msdVcaveKrlIIByDpvjk5nwHjXkIqGZscVxOrTb9tsMA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function saveTodos() {
+            // li의 innerText값을 저장
+            const id = document.getElementById("todolist");
+            const tagName = getElementsByTagName("li");
+            const str = id.tagName;
+            const list = [...str]
+            const arr = list.map(li => li.innerText);
+            localStorage.setItem("todos", JSON.stringify(arr));
+        }
+
+        function appendItem(txt) {
+            const todoList = document.getElementById("todolist");
+            const listItem = document.createElement("li");
+            
+            listItem.className = "d-flex list-group-item list-group-item-action list-group-item-warning";
+            listItem.innerText = txt;
+
+            const xBtn = document.createElement("button");
+            xBtn.setAttribute("type", "button");
+            xBtn.className = 'btn btn-close ms-auto btn-sm';
+            xBtn.onclick = removeItem;
+            listItem.appendChild(xBtn);
+            todoList.appendChild(listItem);
+        }
+
+        function addItem () {
+            console.log("add Item");
+            const item = document.getElementById("item");
+            appendItem(item.value);
+            saveTodos();
+            item.value = '';
+            item.focus();
+        }
+
+        function removeItem () {
+            console.log("remove item"); 
+            document.getElementById("todolist").removeChild(event.target.parentNode);
+            saveTodos();
+        }
+
+        window.onload = function () {
+            const items = localStorage.getItem("todos");
+            if(!items) return;
+            const arr = JSON.parse(items);
+            console.log(arr);
+            
+            for(let i of arr) {
+                appendItem(i);
+            }
+        }
+    </script>
+</head>
+<body> 
+    <div class="container bg-warning shadow mt-5 p-5 w-75">
+        <h2>My ToDo App</h2>
+        <hr>
+        <form class="input-group" onsubmit="event.preventDefault(); addItem();">
+            <input id="item" class="form-control" type="text" placeholder="할일을 입력하세요." autofocus="on">
+            <button class="btn btn-primary" type="button" onclick="addItem()">할일 추가</button>
+        </form>
+        <hr>
+        <ul id="todolist" class="list-group">
+            <!-- <li class="d-flex list-group-item list-group-item-action list-group-item-warning align-items-center">Default Data <button class="btn btn-close ms-auto btn-sm"></button></li> -->
+            <!-- <li class="d-flex list-group-item list-group-item-action">Default Data</li>
+            <li class="d-flex list-group-item">Default Data</li> -->
+        </ul>
+    </div>
+</body>
+</html>
