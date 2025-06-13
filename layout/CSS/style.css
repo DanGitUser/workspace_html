@@ -4,8 +4,10 @@
         a {text-decoration: none; color: #222;}
         header, footer {padding: 1em; background: #222; color: #eee; text-align: center;}
 
+        .resize-none {resize: none;}
         .container {width: 1200px; margin: 0 auto;}
-        
+        .cke_notificatrions_area {}
+
         /* nav */
         nav {background: #eee;}
         nav ul {margin: 0; padding: 0; background-color: #eee;}
@@ -41,6 +43,8 @@
         main .account > div a:hover {text-decoration: underline;}
         main .account > div i {display: inline-block; width: 1px; height: 12px; background-color: #d3d5d7; 
             margin: 4px 12px 0px; vertical-align: top;}
+
+        /* main ul li {max-width: 1092px; display: flex; justify-content: center;} */
 
         main::after{display: block; content: ''; clear: both;}
         /* footer {clear: both;} main::after에서 clear:both 줬기 때문에 footer에 따로 안줘도 된다 */
