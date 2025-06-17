@@ -30,12 +30,12 @@
         </ul>
     </nav>
     <div class="container p-0">
-        <!-- nav -->
-        <!-- content -->
         <main>
-            <div class="small border-bottom border-3 border-black p-0 pb-2">
-                <a href="#">
-                    <div><span class="text-primary">전체</span> 카테고리</div>
+            <form action="">
+
+                <div class="small border-bottom border-3 border-black p-0 pb-2">
+                    <a href="#">
+                        <div><span class="text-primary">전체</span> 카테고리</div>
                 </a>
             </div>
             <div class="small p-0 py-2 align-items-center">
@@ -51,6 +51,9 @@
                     <button class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-clipboard"></i> 스크랩</button>
                 </div>
             </div>
+            <input type="hidden" name="id" value="" />
+            <input type="hidden" name="cno" value="2" />
+        </form>
         </main>
 
     </div>
@@ -64,35 +67,25 @@
         <i class="fa-regular fa-circle-up"></i>
     </div>
     <script>
-        $(".slider").bxSlider({
-            auto: true,
-            mode: 'horizontal'
-        });
+        // $(".slider").bxSlider({
+        //     auto: true,
+        //     mode: 'horizontal'
+        // });
 
-        $(window).scroll(function (e) {
-            console.log(window.scrollY)
-            if (window.scrollY > 500) {
-                $(".arrow-area i").fadeIn(200);
-            } else {
-                $(".arrow-area i").fadeOut(200);
-            }
-        });
+        // $(window).scroll(function (e) {
+        //     console.log(window.scrollY)
+        //     if (window.scrollY > 500) {
+        //         $(".arrow-area i").fadeIn(200);
+        //     } else {
+        //         $(".arrow-area i").fadeOut(200);
+        //     }
+        // });
 
-        window.onload = function() {
+        $(function() {
             CKEDITOR.replace('editor1', {
                 height:400
-            })
-        };
-
-        // import EditorJS from '@editorjs/editorjs';
-
-
-        // const editor = new EditorJS({
-        //  /**
-        //   * Id of Element that should contain Editor instance
-        //   */
-        //  holder: 'editorjs'
-        // });
+            });
+        });
     </script>
 </body>
 
