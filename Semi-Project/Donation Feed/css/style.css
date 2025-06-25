@@ -1,0 +1,33 @@
+@font-face {
+	font-family: 'SUIT Variable';
+	font-weight: 100 900;
+	src: url('./SUIT-Variable.woff2') format('woff2-variations');
+}
+
+:root {
+  --border-1: #32D28B; /* 1등급 테두리*/
+  --border-2: #FFA94D; /* 2등급 테두리*/
+  --border-3: #70C0E8; /* 3등급 테두리*/
+  --border-4: #BCAEF1; /* 4등급 테두리*/
+  --border-5: #E0E0E0; /* 5등급 테두리*/
+  --bg-1: #FFF4CC; /* 기부 1위 배경 */
+  --bg-1: #EAF4FF; /* 기부 2위 배경 */
+  --bg-1: #FBE6D4; /* 기부 3위 배경 */
+  --col-0: #FFFFFF; /* 흰색 */
+  --col-1: #F5F5F5; /* 배경 */
+  --col-2: #CCCCCC; /* 선 */
+  --col-3: #808080; /* 라이트 그레이 */
+  --col-4: #666666; /* 그레이 */
+  --col-5: #4D4D4D; /* 다크 그레이 */
+  --col-6: #333333; /* 블랙 */
+  --col-main: #0077FF; /* 메인 */
+  --col-mainbg: #E9F4FF; /* 서브(배경) */
+}
+
+
+/* 전체 적용 */
+* {font-family: 'SUIT Variable'; list-style: none; text-decoration: none;}
+
+
+.container {max-width: 1120px;}
+main{min-height: calc(100vh - 285px);}

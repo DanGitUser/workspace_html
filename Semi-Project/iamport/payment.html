@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+    <button onclick="mockRequestPay()">결제하기</button>
+
+    <script>
+        function mockRequestPay() {
+            alert("Payment Test");
+
+            // 더미 결제 결과
+            var rsp = {
+                success: true,
+                imp_uid: "DUMMY_IMP_UID_1234",
+                merchant_uid: "DUMMY_ORDER_NO_1234",
+                paid_amount: 10000
+            };
+
+            // 결제 검증 호출
+            fetch("/verifyPayment", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(rsp)
+            })
+                .then(res => res.json())
+                .then(data => alert("결제 처리 완료: " + data.status));
+        }
+    </script>
+</body>
+
+</html>
