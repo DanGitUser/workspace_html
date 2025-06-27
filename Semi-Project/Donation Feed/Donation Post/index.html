@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pretendard&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=SUIT+Variable&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        .main-container {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .left-section {
+            width: 700px;
+        }
+
+        .right-section {
+            width: 360px;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .comment-section {
+            margin-top: 40px;
+        }
+
+        .comment {
+            padding: 16px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .module {
+            background: #f1f1f1;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Left: Post + Comments -->
+        <div class="post-content">
+            <img src="img/postimg.png" alt="Post Image" class="img-fluid rounded mb-3">
+
+            <h5 class="fw-semibold mb-2">‘괜찮아’ 뒤에 숨겨진 통증, 외면하지 마세요.</h5>
+            <p class="text-muted">
+                정신재활시설에 입소한 정신장애인들은 매일같이 불안, 우울, 환청 등 다양한 증상과 싸우며 정신과적 치료와 재활훈련에 힘쓰고 있습니다.
+                마음을 안정되게 하기 위한 과정은 상당한 시간과 에너지를 요하며 이로 인해 따라 생기는 신체적 건강,
+                특히 발달건강에 대한 관심과 관리가 필수적입니다.
+            </p>
+        </div>
+
+        <!-- Right: Modules -->
+        <aside class="right-section">
+            <div class="module">
+                <h6>Module 1</h6>
+                <p>Some content here you can customize easily.</p>
+            </div>
+            <div class="module">
+                <h6>Module 2</h6>
+                <p>Additional content.</p>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>

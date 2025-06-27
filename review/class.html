@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<!-- 버튼 안에 채크 박스  -->
+<body>
+    <p id="para" class="highlight">이 문장은 빨간색이고 굵게 표시됩니다.</p>
+
+    <button id="btn"><input type="text">버튼 클릭</button>
+
+    <script>
+        const para = document.querySelector('.highlight');
+
+        const btn = document.getElementById('btn');
+        btn.addEventListener('change', () => {
+            para.classList.toggle('highlight');
+        });
+    </script>
+</body>
+
+</html>
